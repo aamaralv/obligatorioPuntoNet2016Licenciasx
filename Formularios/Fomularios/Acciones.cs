@@ -75,5 +75,15 @@ namespace Fomularios
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fdb = new FolderBrowserDialog();
+            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                MessageBox.Show(fdb.SelectedPath);
+            }
+
+        }
     }
 }
