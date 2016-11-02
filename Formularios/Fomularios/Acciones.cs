@@ -70,5 +70,10 @@ namespace Fomularios
                 MessageBox.Show("File Name:" + ofd.FileName + " Safe File Name:" + ofd.SafeFileName);
             }
         }
+
+        private void lblpassusuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

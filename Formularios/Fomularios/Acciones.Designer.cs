@@ -34,16 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelLogin = new System.Windows.Forms.Panel();
-            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tabControlAcciones = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblrol = new System.Windows.Forms.Label();
@@ -82,6 +79,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -111,16 +109,11 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.openFileDialog3 = new System.Windows.Forms.OpenFileDialog();
-            this.folderBrowserDialog2 = new System.Windows.Forms.FolderBrowserDialog();
-            this.folderBrowserDialog3 = new System.Windows.Forms.FolderBrowserDialog();
-            this.folderBrowserDialog4 = new System.Windows.Forms.FolderBrowserDialog();
-            this.folderBrowserDialog5 = new System.Windows.Forms.FolderBrowserDialog();
-            this.folderBrowserDialog6 = new System.Windows.Forms.FolderBrowserDialog();
-            this.folderBrowserDialog7 = new System.Windows.Forms.FolderBrowserDialog();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelLogin.SuspendLayout();
             this.tabControlAcciones.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -226,9 +219,9 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(363, 12);
+            this.groupBox2.Location = new System.Drawing.Point(244, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(475, 454);
+            this.groupBox2.Size = new System.Drawing.Size(594, 454);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registrados";
@@ -241,39 +234,18 @@
             this.Nombre,
             this.Usuario,
             this.Contraseña,
-            this.Rol});
+            this.Rol,
+            this.Correo});
             this.dataGridView1.Location = new System.Drawing.Point(23, 25);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 423);
+            this.dataGridView1.Size = new System.Drawing.Size(565, 423);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Constraseña";
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.ReadOnly = true;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblrol);
@@ -285,22 +257,38 @@
             this.groupBox1.Controls.Add(this.lblnombreusuario);
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(334, 454);
+            this.groupBox1.Size = new System.Drawing.Size(225, 454);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Registro";
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(81, 141);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(138, 20);
+            this.textBox4.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 142);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(64, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Contraseña:";
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(91, 137);
+            this.textBox1.Location = new System.Drawing.Point(81, 106);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 20);
+            this.textBox1.Size = new System.Drawing.Size(138, 20);
             this.textBox1.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(16, 140);
+            this.label5.Location = new System.Drawing.Point(17, 109);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 7;
@@ -317,29 +305,29 @@
             // 
             // txtpassusuario
             // 
-            this.txtpassusuario.Location = new System.Drawing.Point(91, 176);
+            this.txtpassusuario.Location = new System.Drawing.Point(80, 176);
             this.txtpassusuario.Name = "txtpassusuario";
-            this.txtpassusuario.Size = new System.Drawing.Size(121, 20);
+            this.txtpassusuario.Size = new System.Drawing.Size(139, 20);
             this.txtpassusuario.TabIndex = 5;
             // 
             // txtnombreusuario
             // 
-            this.txtnombreusuario.Location = new System.Drawing.Point(90, 104);
+            this.txtnombreusuario.Location = new System.Drawing.Point(80, 73);
             this.txtnombreusuario.Name = "txtnombreusuario";
-            this.txtnombreusuario.Size = new System.Drawing.Size(121, 20);
+            this.txtnombreusuario.Size = new System.Drawing.Size(139, 20);
             this.txtnombreusuario.TabIndex = 4;
             // 
             // cbxRol
             // 
             this.cbxRol.FormattingEnabled = true;
-            this.cbxRol.Location = new System.Drawing.Point(91, 226);
+            this.cbxRol.Location = new System.Drawing.Point(80, 226);
             this.cbxRol.Name = "cbxRol";
-            this.cbxRol.Size = new System.Drawing.Size(121, 21);
+            this.cbxRol.Size = new System.Drawing.Size(139, 21);
             this.cbxRol.TabIndex = 3;
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(253, 425);
+            this.btnRegistrar.Location = new System.Drawing.Point(138, 425);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 2;
@@ -351,14 +339,15 @@
             this.lblpassusuario.AutoSize = true;
             this.lblpassusuario.Location = new System.Drawing.Point(16, 177);
             this.lblpassusuario.Name = "lblpassusuario";
-            this.lblpassusuario.Size = new System.Drawing.Size(64, 13);
+            this.lblpassusuario.Size = new System.Drawing.Size(41, 13);
             this.lblpassusuario.TabIndex = 1;
-            this.lblpassusuario.Text = "Contraseña:";
+            this.lblpassusuario.Text = "Correo:";
+            this.lblpassusuario.Click += new System.EventHandler(this.lblpassusuario_Click);
             // 
             // lblnombreusuario
             // 
             this.lblnombreusuario.AutoSize = true;
-            this.lblnombreusuario.Location = new System.Drawing.Point(15, 107);
+            this.lblnombreusuario.Location = new System.Drawing.Point(16, 76);
             this.lblnombreusuario.Name = "lblnombreusuario";
             this.lblnombreusuario.Size = new System.Drawing.Size(47, 13);
             this.lblnombreusuario.TabIndex = 0;
@@ -653,6 +642,13 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "BD";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(90, 66);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(121, 20);
+            this.textBox3.TabIndex = 13;
+            // 
             // textBox12
             // 
             this.textBox12.Location = new System.Drawing.Point(90, 173);
@@ -926,24 +922,35 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Nombre:";
             // 
-            // openFileDialog1
+            // Nombre
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
-            // openFileDialog2
+            // Usuario
             // 
-            this.openFileDialog2.FileName = "openFileDialog2";
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
             // 
-            // openFileDialog3
+            // Contraseña
             // 
-            this.openFileDialog3.FileName = "openFileDialog3";
+            this.Contraseña.HeaderText = "Constraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
             // 
-            // textBox3
+            // Rol
             // 
-            this.textBox3.Location = new System.Drawing.Point(90, 66);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 13;
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             // 
             // Acciones
             // 
@@ -999,7 +1006,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelLogin;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.TabControl tabControlAcciones;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -1016,10 +1022,6 @@
         private System.Windows.Forms.Label lblpassusuario;
         private System.Windows.Forms.Label lblnombreusuario;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label9;
@@ -1051,13 +1053,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog2;
-        private System.Windows.Forms.OpenFileDialog openFileDialog3;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog2;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog3;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog4;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog5;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox1;
@@ -1075,17 +1070,22 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog7;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }
 
