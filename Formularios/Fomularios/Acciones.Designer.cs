@@ -51,10 +51,6 @@
             this.lblpassusuario = new System.Windows.Forms.Label();
             this.lblnombreusuario = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -121,7 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -244,6 +239,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.textBox1);
@@ -255,6 +251,7 @@
             this.groupBox1.Controls.Add(this.btnRegistrar);
             this.groupBox1.Controls.Add(this.lblpassusuario);
             this.groupBox1.Controls.Add(this.lblnombreusuario);
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox1.Location = new System.Drawing.Point(13, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(225, 454);
@@ -355,7 +352,6 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Controls.Add(this.groupBox4);
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
@@ -364,43 +360,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Roles";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Location = new System.Drawing.Point(527, 9);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(314, 454);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Creacion";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(233, 425);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Crear";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(89, 19);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 20);
-            this.textBox5.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 22);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Nombre:";
             // 
             // groupBox4
             // 
@@ -414,7 +373,7 @@
             this.groupBox4.Controls.Add(this.comboBox5);
             this.groupBox4.Location = new System.Drawing.Point(16, 9);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(487, 454);
+            this.groupBox4.Size = new System.Drawing.Size(835, 454);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Asignacion";
@@ -422,23 +381,23 @@
             // listBox2
             // 
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(328, 218);
+            this.listBox2.Location = new System.Drawing.Point(378, 162);
             this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(120, 95);
+            this.listBox2.Size = new System.Drawing.Size(202, 95);
             this.listBox2.TabIndex = 24;
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(48, 218);
+            this.listBox1.Location = new System.Drawing.Point(16, 162);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
+            this.listBox1.Size = new System.Drawing.Size(202, 95);
             this.listBox1.TabIndex = 23;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(325, 183);
+            this.label8.Location = new System.Drawing.Point(375, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(59, 13);
             this.label8.TabIndex = 22;
@@ -447,7 +406,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 183);
+            this.label3.Location = new System.Drawing.Point(17, 127);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 13);
             this.label3.TabIndex = 21;
@@ -455,7 +414,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(205, 247);
+            this.button6.Location = new System.Drawing.Point(255, 191);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 20;
@@ -464,7 +423,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(205, 218);
+            this.button5.Location = new System.Drawing.Point(255, 162);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 19;
@@ -975,8 +934,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -1022,9 +979,6 @@
         private System.Windows.Forms.Label lblpassusuario;
         private System.Windows.Forms.Label lblnombreusuario;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox8;
@@ -1053,7 +1007,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label8;
