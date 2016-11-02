@@ -62,7 +62,6 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -460,7 +459,6 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button7);
             this.groupBox5.Controls.Add(this.textBox8);
             this.groupBox5.Controls.Add(this.textBox9);
             this.groupBox5.Controls.Add(this.label14);
@@ -479,25 +477,16 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Mail";
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(363, 411);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(106, 23);
-            this.button7.TabIndex = 21;
-            this.button7.Text = "Enviar";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(104, 167);
+            this.textBox8.Location = new System.Drawing.Point(113, 174);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(121, 20);
             this.textBox8.TabIndex = 20;
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(104, 134);
+            this.textBox9.Location = new System.Drawing.Point(113, 138);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(121, 20);
             this.textBox9.TabIndex = 19;
@@ -505,7 +494,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 167);
+            this.label14.Location = new System.Drawing.Point(23, 173);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 13);
             this.label14.TabIndex = 18;
@@ -514,7 +503,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 137);
+            this.label15.Location = new System.Drawing.Point(23, 138);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(46, 13);
             this.label15.TabIndex = 17;
@@ -523,7 +512,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(14, 90);
+            this.label16.Location = new System.Drawing.Point(23, 100);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(75, 13);
             this.label16.TabIndex = 16;
@@ -532,7 +521,7 @@
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(104, 90);
+            this.comboBox3.Location = new System.Drawing.Point(113, 100);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 15;
@@ -540,7 +529,7 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(231, 56);
+            this.checkBox3.Location = new System.Drawing.Point(240, 65);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(46, 17);
             this.checkBox3.TabIndex = 13;
@@ -549,14 +538,14 @@
             // 
             // textBox10
             // 
-            this.textBox10.Location = new System.Drawing.Point(104, 53);
+            this.textBox10.Location = new System.Drawing.Point(113, 63);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(121, 20);
             this.textBox10.TabIndex = 9;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(104, 19);
+            this.textBox11.Location = new System.Drawing.Point(113, 29);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(121, 20);
             this.textBox11.TabIndex = 8;
@@ -564,7 +553,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(14, 53);
+            this.label18.Location = new System.Drawing.Point(23, 63);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(41, 13);
             this.label18.TabIndex = 7;
@@ -573,7 +562,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(14, 22);
+            this.label19.Location = new System.Drawing.Point(23, 32);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(84, 13);
             this.label19.TabIndex = 6;
@@ -636,7 +625,7 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(265, 65);
+            this.checkBox4.Location = new System.Drawing.Point(217, 66);
             this.checkBox4.Name = "checkBox4";
             this.checkBox4.Size = new System.Drawing.Size(52, 17);
             this.checkBox4.TabIndex = 9;
@@ -1026,7 +1015,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
