@@ -1,6 +1,6 @@
 ﻿namespace Fomularios
 {
-    partial class Acciones
+    partial class Configuraciones
     {
         /// <summary>
         /// Required designer variable.
@@ -28,16 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btningresar = new System.Windows.Forms.Button();
-            this.txtusuario = new System.Windows.Forms.TextBox();
-            this.txtcontraseña = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelLogin = new System.Windows.Forms.Panel();
             this.tabControlAcciones = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -99,19 +98,13 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Carpeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button3 = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Carpeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelLogin.SuspendLayout();
             this.tabControlAcciones.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -130,60 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox10.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btningresar
-            // 
-            this.btningresar.Location = new System.Drawing.Point(208, 102);
-            this.btningresar.Name = "btningresar";
-            this.btningresar.Size = new System.Drawing.Size(75, 23);
-            this.btningresar.TabIndex = 0;
-            this.btningresar.Text = "Ingresar";
-            this.btningresar.UseVisualStyleBackColor = true;
-            this.btningresar.Click += new System.EventHandler(this.btningresar_Click);
-            // 
-            // txtusuario
-            // 
-            this.txtusuario.Location = new System.Drawing.Point(86, 20);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(100, 20);
-            this.txtusuario.TabIndex = 1;
-            // 
-            // txtcontraseña
-            // 
-            this.txtcontraseña.Location = new System.Drawing.Point(86, 58);
-            this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(100, 20);
-            this.txtcontraseña.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Contraseña:";
-            // 
-            // panelLogin
-            // 
-            this.panelLogin.Controls.Add(this.txtusuario);
-            this.panelLogin.Controls.Add(this.label2);
-            this.panelLogin.Controls.Add(this.btningresar);
-            this.panelLogin.Controls.Add(this.label1);
-            this.panelLogin.Controls.Add(this.txtcontraseña);
-            this.panelLogin.Location = new System.Drawing.Point(38, 12);
-            this.panelLogin.Name = "panelLogin";
-            this.panelLogin.Size = new System.Drawing.Size(297, 136);
-            this.panelLogin.TabIndex = 5;
             // 
             // tabControlAcciones
             // 
@@ -237,6 +176,36 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(565, 423);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Usuario
+            // 
+            this.Usuario.HeaderText = "Usuario";
+            this.Usuario.Name = "Usuario";
+            this.Usuario.ReadOnly = true;
+            // 
+            // Contraseña
+            // 
+            this.Contraseña.HeaderText = "Constraseña";
+            this.Contraseña.Name = "Contraseña";
+            this.Contraseña.ReadOnly = true;
+            // 
+            // Rol
+            // 
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            // 
+            // Correo
+            // 
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             // 
             // groupBox1
             // 
@@ -830,6 +799,18 @@
             this.dataGridView2.Size = new System.Drawing.Size(446, 423);
             this.dataGridView2.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // Carpeta
+            // 
+            this.Carpeta.HeaderText = "Carpeta";
+            this.Carpeta.Name = "Carpeta";
+            this.Carpeta.ReadOnly = true;
+            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.button3);
@@ -842,6 +823,16 @@
             this.groupBox10.TabIndex = 2;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Agregar/Modificar";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(253, 51);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Caperta";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox2
             // 
@@ -868,74 +859,19 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "Nombre:";
             // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.Name = "Usuario";
-            this.Usuario.ReadOnly = true;
-            // 
-            // Contraseña
-            // 
-            this.Contraseña.HeaderText = "Constraseña";
-            this.Contraseña.Name = "Contraseña";
-            this.Contraseña.ReadOnly = true;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            // 
-            // Correo
-            // 
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            this.Correo.ReadOnly = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(253, 51);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Caperta";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Carpeta
-            // 
-            this.Carpeta.HeaderText = "Carpeta";
-            this.Carpeta.Name = "Carpeta";
-            this.Carpeta.ReadOnly = true;
-            // 
-            // Acciones
+            // Configuraciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(899, 526);
             this.Controls.Add(this.tabControlAcciones);
-            this.Controls.Add(this.panelLogin);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.Name = "Acciones";
+            this.Name = "Configuraciones";
             this.ShowIcon = false;
-            this.Text = "Acciones";
+            this.Text = "Configuraciones";
             this.Load += new System.EventHandler(this.Acciones_Load);
-            this.panelLogin.ResumeLayout(false);
-            this.panelLogin.PerformLayout();
             this.tabControlAcciones.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
@@ -965,13 +901,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btningresar;
-        private System.Windows.Forms.TextBox txtusuario;
-        private System.Windows.Forms.TextBox txtcontraseña;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panelLogin;
         private System.Windows.Forms.TabControl tabControlAcciones;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;

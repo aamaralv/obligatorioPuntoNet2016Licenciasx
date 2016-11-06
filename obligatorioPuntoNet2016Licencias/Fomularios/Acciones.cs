@@ -10,34 +10,24 @@ using System.Windows.Forms;
 
 namespace Fomularios
 {
-    public partial class Acciones : Form
+    public partial class Configuraciones : Form
     {
-        public Acciones()
+        public Configuraciones()
         {
             InitializeComponent();
         }
 
-        private void btningresar_Click(object sender, EventArgs e)
+
+
+        private void Acciones_Load(object sender, EventArgs e)
         {
-            this.panelLogin.Visible = false;
             this.tabControlAcciones.Visible = true;
-            this.Text = "Acciones";
+            this.Text = "Configuraciones";
             this.tabControlAcciones.Height = 500;
             this.tabControlAcciones.Width = 865;
             this.Width = 915;
             this.Height = 565;
             this.CenterToScreen();
-
-        }
-
-        private void Acciones_Load(object sender, EventArgs e)
-        {
-            this.tabControlAcciones.Visible = false;
-            this.Text = "Login";
-            this.Width =375;
-            this.Height = 200;
-            this.CenterToScreen();
-
 
         }
 
