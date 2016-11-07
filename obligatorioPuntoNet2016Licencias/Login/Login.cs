@@ -71,11 +71,10 @@ namespace Login
             {
                 var appSettings = ConfigurationManager.AppSettings;
                 result = appSettings[key] ?? "No se encontro";
-                Console.WriteLine(result);
             }
             catch (ConfigurationErrorsException)
             {
-                Console.WriteLine("Error Leyendo App.config");
+                MessageBox.Show("Error Leyendo App.config");
             }
             return result;
         }
