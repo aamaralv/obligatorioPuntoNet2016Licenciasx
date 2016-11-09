@@ -118,6 +118,10 @@ namespace Fomularios
                 myConnection = new SqlConnection(connectionString);
                 myConnection.Open();
                 mensaje = "OK";
+                tabControlAcciones.GetControl(0).Enabled = true;
+                tabControlAcciones.GetControl(1).Enabled = true;
+                tabControlAcciones.GetControl(3).Enabled = true;
+                tabControlAcciones.GetControl(4).Enabled = true;
             }
             catch (SqlException ex)
             {
