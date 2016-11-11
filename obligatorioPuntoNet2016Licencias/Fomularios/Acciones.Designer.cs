@@ -74,7 +74,7 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.txbServidorCliente = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -507,7 +507,7 @@
             this.groupBox5.Controls.Add(this.comboBox3);
             this.groupBox5.Controls.Add(this.checkBox3);
             this.groupBox5.Controls.Add(this.textBox10);
-            this.groupBox5.Controls.Add(this.textBox11);
+            this.groupBox5.Controls.Add(this.txbServidorCliente);
             this.groupBox5.Controls.Add(this.label18);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Location = new System.Drawing.Point(247, 7);
@@ -583,12 +583,12 @@
             this.textBox10.Size = new System.Drawing.Size(52, 20);
             this.textBox10.TabIndex = 9;
             // 
-            // textBox11
+            // txbServidorCliente
             // 
-            this.textBox11.Location = new System.Drawing.Point(105, 26);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(121, 20);
-            this.textBox11.TabIndex = 8;
+            this.txbServidorCliente.Location = new System.Drawing.Point(105, 26);
+            this.txbServidorCliente.Name = "txbServidorCliente";
+            this.txbServidorCliente.Size = new System.Drawing.Size(121, 20);
+            this.txbServidorCliente.TabIndex = 8;
             // 
             // label18
             // 
@@ -1067,7 +1067,7 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox txbServidorCliente;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.GroupBox groupBox6;

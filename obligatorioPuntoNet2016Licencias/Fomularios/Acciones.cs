@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using Fomularios;
 
 namespace Fomularios
 {
@@ -122,6 +123,11 @@ namespace Fomularios
                 tabControlAcciones.GetControl(1).Enabled = true;
                 tabControlAcciones.GetControl(3).Enabled = true;
                 tabControlAcciones.GetControl(4).Enabled = true;
+                WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
+                WSConfiguraciones.Configuraciones[] configuraciones = ws.ListConfig();
+                txbServidorCliente.Text = configuraciones.ElementAt(0).ToString();
+
+                 
             }
             catch (SqlException ex)
             {
