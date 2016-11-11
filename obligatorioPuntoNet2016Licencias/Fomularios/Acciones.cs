@@ -125,9 +125,9 @@ namespace Fomularios
                 tabControlAcciones.GetControl(4).Enabled = true;
                 WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
                 WSConfiguraciones.Configuraciones[] configuraciones = ws.ListConfig();
-                txbServidorCliente.Text = configuraciones.ElementAt(0).ToString();
+                txbServidorCliente.Text = configuraciones[0].Valor;
 
-                 
+
             }
             catch (SqlException ex)
             {
