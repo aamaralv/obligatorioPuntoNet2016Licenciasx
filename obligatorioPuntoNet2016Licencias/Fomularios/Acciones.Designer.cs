@@ -44,7 +44,7 @@
             this.lblrol = new System.Windows.Forms.Label();
             this.txtpassusuario = new System.Windows.Forms.TextBox();
             this.txtnombreusuario = new System.Windows.Forms.TextBox();
-            this.cbxRol = new System.Windows.Forms.ComboBox();
+            this.cmbrolusuario = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblpassusuario = new System.Windows.Forms.Label();
             this.lblnombreusuario = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.cmbroles = new System.Windows.Forms.ComboBox();
             this.tabPageConexiones = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.txbMensajeMail = new System.Windows.Forms.TextBox();
@@ -223,7 +223,7 @@
             this.groupBox1.Controls.Add(this.lblrol);
             this.groupBox1.Controls.Add(this.txtpassusuario);
             this.groupBox1.Controls.Add(this.txtnombreusuario);
-            this.groupBox1.Controls.Add(this.cbxRol);
+            this.groupBox1.Controls.Add(this.cmbrolusuario);
             this.groupBox1.Controls.Add(this.btnRegistrar);
             this.groupBox1.Controls.Add(this.lblpassusuario);
             this.groupBox1.Controls.Add(this.lblnombreusuario);
@@ -290,13 +290,13 @@
             this.txtnombreusuario.Size = new System.Drawing.Size(139, 20);
             this.txtnombreusuario.TabIndex = 4;
             // 
-            // cbxRol
+            // cmbrolusuario
             // 
-            this.cbxRol.FormattingEnabled = true;
-            this.cbxRol.Location = new System.Drawing.Point(300, 58);
-            this.cbxRol.Name = "cbxRol";
-            this.cbxRol.Size = new System.Drawing.Size(139, 21);
-            this.cbxRol.TabIndex = 3;
+            this.cmbrolusuario.FormattingEnabled = true;
+            this.cmbrolusuario.Location = new System.Drawing.Point(300, 58);
+            this.cmbrolusuario.Name = "cmbrolusuario";
+            this.cmbrolusuario.Size = new System.Drawing.Size(139, 21);
+            this.cmbrolusuario.TabIndex = 3;
             // 
             // btnRegistrar
             // 
@@ -346,7 +346,7 @@
             this.groupBox4.Controls.Add(this.button6);
             this.groupBox4.Controls.Add(this.button5);
             this.groupBox4.Controls.Add(this.label25);
-            this.groupBox4.Controls.Add(this.comboBox5);
+            this.groupBox4.Controls.Add(this.cmbroles);
             this.groupBox4.Location = new System.Drawing.Point(16, 9);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(464, 213);
@@ -415,13 +415,13 @@
             this.label25.TabIndex = 18;
             this.label25.Text = "Rol:";
             // 
-            // comboBox5
+            // cmbroles
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(176, 29);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 21);
-            this.comboBox5.TabIndex = 17;
+            this.cmbroles.FormattingEnabled = true;
+            this.cmbroles.Location = new System.Drawing.Point(176, 29);
+            this.cmbroles.Name = "cmbroles";
+            this.cmbroles.Size = new System.Drawing.Size(121, 21);
+            this.cmbroles.TabIndex = 17;
             // 
             // tabPageConexiones
             // 
@@ -991,6 +991,7 @@
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // Configuraciones
             // 
@@ -1052,7 +1053,7 @@
         private System.Windows.Forms.Label lblrol;
         private System.Windows.Forms.TextBox txtpassusuario;
         private System.Windows.Forms.TextBox txtnombreusuario;
-        private System.Windows.Forms.ComboBox cbxRol;
+        private System.Windows.Forms.ComboBox cmbrolusuario;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblpassusuario;
         private System.Windows.Forms.Label lblnombreusuario;
@@ -1092,7 +1093,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox cmbroles;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox9;

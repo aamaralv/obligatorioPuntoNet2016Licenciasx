@@ -18,7 +18,12 @@ namespace Fomularios
         public Configuraciones()
         {
             String conexion = LeerConfiguracion();
+    
+
+
             InitializeComponent();
+            CargarRoles();
+
             if (String.IsNullOrEmpty(conexion)) {
                 tabControlAcciones.GetControl(0).Enabled = false;
                 tabControlAcciones.GetControl(1).Enabled = false;
@@ -95,6 +100,26 @@ namespace Fomularios
             return result;
         }
 
+         private void CargarRoles()
+        {
+            /*Carga de combos para seleccion de roles*/
+            WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
+            WSConfiguraciones.Roles[] roles = ws.ListRoles();
+
+
+            this.cmbroles.DataSource = roles;
+            this.cmbroles.DisplayMember = "Descripcion";
+            this.cmbroles.ValueMember = "IdRol";
+            this.cmbroles.SelectedIndex = 0;
+
+
+            this.cmbrolusuario.DataSource = roles;
+            this.cmbrolusuario.DisplayMember = "Descripcion";
+            this.cmbrolusuario.ValueMember = "IdRol";
+            this.cmbrolusuario.SelectedIndex = 0;
+
+        }
+
         private void chkEsLocal_CheckedChanged(object sender, EventArgs e)
         {
             if (chkEsLocal.CheckState == CheckState.Checked)
@@ -168,6 +193,11 @@ namespace Fomularios
             }
             Console.WriteLine(str.ToString());
             return str.ToString(); 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
