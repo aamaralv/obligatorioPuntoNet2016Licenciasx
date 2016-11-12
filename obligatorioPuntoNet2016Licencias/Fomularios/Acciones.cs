@@ -15,6 +15,10 @@ namespace Fomularios
 {
     public partial class Configuraciones : Form
     {
+        private int maxidusuario = 0;
+        private string carpetacliente="";
+        private WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
+
         public Configuraciones()
         {
             String conexion = LeerConfiguracion();
@@ -23,6 +27,9 @@ namespace Fomularios
 
             InitializeComponent();
             CargarRoles();
+            CargarUsuarios();
+            CargarClientes();
+
 
             if (String.IsNullOrEmpty(conexion)) {
                 tabControlAcciones.GetControl(0).Enabled = false;
@@ -83,6 +90,9 @@ namespace Fomularios
             if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 MessageBox.Show(fdb.SelectedPath);
+                this.carpetacliente = fdb.SelectedPath;
+
+
             }
 
         }
@@ -103,7 +113,6 @@ namespace Fomularios
          private void CargarRoles()
         {
             /*Carga de combos para seleccion de roles*/
-            WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
             WSConfiguraciones.Roles[] roles = ws.ListRoles();
 
 
@@ -119,6 +128,146 @@ namespace Fomularios
             this.cmbrolusuario.SelectedIndex = 0;
 
         }
+
+        private void RegistrarUsuario()
+        {
+          
+        
+            ws.AddUsuarios(maxidusuario+1,this.txtnombreusuario.Text,txtloginusuario.Text,txtcontraseñausuario.Text,txtcorreousuario.Text);
+
+           DialogResult res = MessageBox.Show("Usuario se registro con exito!", "Configuracion", MessageBoxButtons.OK);
+
+
+        }
+
+        private void CargarUsuarios()
+        {
+            this.dataGridViewUsuarios.Enabled = true;
+            
+ 
+            WSConfiguraciones.Usuario[] usuarios = ws.ListUsuarios();
+
+            foreach (WSConfiguraciones.Usuario usuario in usuarios)
+            {
+                if (maxidusuario < usuario.IdUsuario){
+                    maxidusuario = usuario.IdUsuario;
+                }
+                //Console.WriteLine("numero " + usuario.IdUsuario);
+                WSConfiguraciones.Roles[] roles= ws.ListRol(usuario.IdUsuario);
+
+                foreach (WSConfiguraciones.Roles rol in roles) {
+                    this.dataGridViewUsuarios.Rows.Insert(this.dataGridViewUsuarios.NewRowIndex, usuario.IdUsuario, usuario.Nombre, usuario.Usuario1, rol.Descripcion, usuario.Correo);
+
+                }
+
+                   
+            }
+
+        }
+
+
+        private void CargarClientes()
+        {
+            this.dataGridViewUsuarios.Enabled = true;
+
+            WSConfiguraciones.Clientes[] clientes = ws.ListClientes();
+            this.dataGridViewregistrados.Rows.Clear();
+
+            foreach (WSConfiguraciones.Clientes cliente in clientes)
+            {
+               
+                this.dataGridViewregistrados.Rows.Insert(this.dataGridViewregistrados.NewRowIndex, cliente.Nombre, cliente.Carpeta);
+
+
+            }
+
+        }
+
+        private void CargarUsuariosPorRol()
+        {
+            this.dataGridViewUsuarios.Enabled = true;
+
+            WSConfiguraciones.Usuario[] usuarios = ws.ListUsuarios();
+            this.lbxusuariosasignados.Items.Clear();
+            this.lbxusuariosinrol.Items.Clear();
+
+            foreach (WSConfiguraciones.Usuario usuario in usuarios)
+            {
+                if (maxidusuario < usuario.IdUsuario)
+                {
+                    maxidusuario = usuario.IdUsuario;
+                }
+                Console.WriteLine("numero " + usuario.IdUsuario);
+                WSConfiguraciones.Roles[] roles = ws.ListRol(usuario.IdUsuario);
+
+                
+                    foreach (WSConfiguraciones.Roles rol in roles) {
+
+
+                    if (this.cmbroles.SelectedValue.ToString().Equals(rol.IdRol))
+                    {
+                        
+                        this.lbxusuariosasignados.Items.Add(usuario);
+                        this.lbxusuariosasignados.DisplayMember = "Nombre";
+                        this.lbxusuariosasignados.ValueMember = "IdUsuario";
+                    }
+                    
+                    }
+
+
+                if (roles.Length == 0) {
+                    this.lbxusuariosinrol.Items.Add(usuario);
+                    this.lbxusuariosinrol.DisplayMember = "Nombre";
+                    this.lbxusuariosinrol.ValueMember = "IdUsuario";
+                }
+                   
+            }
+
+             
+        }
+
+
+        private void AsignarRolUsuario()
+        {
+
+     
+            int idrol = int.Parse(this.cmbroles.SelectedValue.ToString());
+
+            WSConfiguraciones.Usuario usuario = (WSConfiguraciones.Usuario)this.lbxusuariosinrol.SelectedItem;
+            int idusuario = usuario.IdUsuario;
+            Console.WriteLine("id usuario " + usuario.IdUsuario + " idrol " + idrol);
+
+            ws.AddRol(idrol, idusuario);
+          
+
+            this.lbxusuariosasignados.Items.Add(usuario);
+            this.lbxusuariosasignados.DisplayMember = "Nombre";
+            this.lbxusuariosasignados.ValueMember = "IdUsuario";
+
+
+            DialogResult res = MessageBox.Show("Se asigno rol al usuario exito!", "Configuracion", MessageBoxButtons.OK);
+
+
+        }
+
+        private void RegistrarCliente()
+        {
+
+         
+            if (this.txtnombrecliente.Text.Equals(String.Empty) || this.carpetacliente.Equals(String.Empty))
+            {
+                DialogResult res = MessageBox.Show("Los campos no pueden estar vacios,verifique por por favor!", "Configuracion", MessageBoxButtons.OK);
+            }
+            else
+            {
+                ws.AddClientes(this.txtnombrecliente.Text, this.carpetacliente);
+
+
+                DialogResult res = MessageBox.Show("Se registro el cliente con exito!", "Configuracion", MessageBoxButtons.OK);
+            }
+
+        }
+
 
         private void chkEsLocal_CheckedChanged(object sender, EventArgs e)
         {
@@ -148,7 +297,7 @@ namespace Fomularios
                 tabControlAcciones.GetControl(1).Enabled = true;
                 tabControlAcciones.GetControl(3).Enabled = true;
                 tabControlAcciones.GetControl(4).Enabled = true;
-                WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
+
                 WSConfiguraciones.Configuraciones[] configuraciones = ws.ListConfig();
                 txbServidorCliente.Text = configuraciones[0].Valor;
 
@@ -198,6 +347,38 @@ namespace Fomularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            RegistrarUsuario();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("Desea cerrar el programa ?", "Configuracion", MessageBoxButtons.YesNo);
+            if (res == DialogResult.Yes)
+                this.Close();
+        }
+
+        private void cmbroles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            CargarUsuariosPorRol();
+
+
+        }
+
+        private void btnasignarrol_Click(object sender, EventArgs e)
+        {
+            AsignarRolUsuario();
+        }
+
+ 
+        private void btnconfirmar_Click(object sender, EventArgs e)
+        {
+            RegistrarCliente();
+            CargarClientes();
         }
     }
 }

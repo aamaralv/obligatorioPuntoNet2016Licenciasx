@@ -31,18 +31,19 @@
             this.tabControlAcciones = new System.Windows.Forms.TabControl();
             this.tabPageUsuarios = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewUsuarios = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtcontraseñausuario = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtloginusuario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lblrol = new System.Windows.Forms.Label();
-            this.txtpassusuario = new System.Windows.Forms.TextBox();
+            this.txtcorreousuario = new System.Windows.Forms.TextBox();
             this.txtnombreusuario = new System.Windows.Forms.TextBox();
             this.cmbrolusuario = new System.Windows.Forms.ComboBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
@@ -50,12 +51,12 @@
             this.lblnombreusuario = new System.Windows.Forms.Label();
             this.tabPageRoles = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbxusuariosasignados = new System.Windows.Forms.ListBox();
+            this.lbxusuariosinrol = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnquitarrol = new System.Windows.Forms.Button();
+            this.btnasignarrol = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.cmbroles = new System.Windows.Forms.ComboBox();
             this.tabPageConexiones = new System.Windows.Forms.TabPage();
@@ -105,13 +106,13 @@
             this.label29 = new System.Windows.Forms.Label();
             this.tabPageClientes = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewregistrados = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Carpeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnconfirmar = new System.Windows.Forms.Button();
+            this.btnseleccionarcarpeta = new System.Windows.Forms.Button();
+            this.txtnombrecliente = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -119,7 +120,7 @@
             this.tabControlAcciones.SuspendLayout();
             this.tabPageUsuarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPageRoles.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -133,7 +134,7 @@
             this.groupBox8.SuspendLayout();
             this.tabPageClientes.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewregistrados)).BeginInit();
             this.groupBox10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,7 +167,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.dataGridViewUsuarios);
             this.groupBox2.Location = new System.Drawing.Point(9, 138);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(478, 203);
@@ -174,54 +175,68 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registrados";
             // 
-            // dataGridView1
+            // dataGridViewUsuarios
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
+            this.dataGridViewUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Nombre,
             this.Usuario,
             this.Rol,
             this.Correo});
-            this.dataGridView1.Location = new System.Drawing.Point(15, 21);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(447, 166);
-            this.dataGridView1.TabIndex = 0;
+            this.dataGridViewUsuarios.Location = new System.Drawing.Point(15, 21);
+            this.dataGridViewUsuarios.Name = "dataGridViewUsuarios";
+            this.dataGridViewUsuarios.ReadOnly = true;
+            this.dataGridViewUsuarios.Size = new System.Drawing.Size(447, 166);
+            this.dataGridViewUsuarios.TabIndex = 0;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 41;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 69;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
+            this.Usuario.Width = 68;
             // 
             // Rol
             // 
             this.Rol.HeaderText = "Rol";
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
+            this.Rol.Width = 48;
             // 
             // Correo
             // 
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
+            this.Correo.Width = 63;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtcontraseñausuario);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtloginusuario);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.lblrol);
-            this.groupBox1.Controls.Add(this.txtpassusuario);
+            this.groupBox1.Controls.Add(this.txtcorreousuario);
             this.groupBox1.Controls.Add(this.txtnombreusuario);
             this.groupBox1.Controls.Add(this.cmbrolusuario);
             this.groupBox1.Controls.Add(this.btnRegistrar);
@@ -235,12 +250,12 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Nuevo Registro";
             // 
-            // textBox4
+            // txtcontraseñausuario
             // 
-            this.textBox4.Location = new System.Drawing.Point(96, 94);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(138, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtcontraseñausuario.Location = new System.Drawing.Point(96, 94);
+            this.txtcontraseñausuario.Name = "txtcontraseñausuario";
+            this.txtcontraseñausuario.Size = new System.Drawing.Size(138, 20);
+            this.txtcontraseñausuario.TabIndex = 10;
             // 
             // label10
             // 
@@ -251,12 +266,12 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Contraseña:";
             // 
-            // textBox1
+            // txtloginusuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 59);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtloginusuario.Location = new System.Drawing.Point(96, 59);
+            this.txtloginusuario.Name = "txtloginusuario";
+            this.txtloginusuario.Size = new System.Drawing.Size(138, 20);
+            this.txtloginusuario.TabIndex = 8;
             // 
             // label5
             // 
@@ -276,12 +291,12 @@
             this.lblrol.TabIndex = 6;
             this.lblrol.Text = "Rol:";
             // 
-            // txtpassusuario
+            // txtcorreousuario
             // 
-            this.txtpassusuario.Location = new System.Drawing.Point(300, 26);
-            this.txtpassusuario.Name = "txtpassusuario";
-            this.txtpassusuario.Size = new System.Drawing.Size(139, 20);
-            this.txtpassusuario.TabIndex = 5;
+            this.txtcorreousuario.Location = new System.Drawing.Point(300, 26);
+            this.txtcorreousuario.Name = "txtcorreousuario";
+            this.txtcorreousuario.Size = new System.Drawing.Size(139, 20);
+            this.txtcorreousuario.TabIndex = 5;
             // 
             // txtnombreusuario
             // 
@@ -306,6 +321,7 @@
             this.btnRegistrar.TabIndex = 2;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // lblpassusuario
             // 
@@ -339,12 +355,12 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.listBox2);
-            this.groupBox4.Controls.Add(this.listBox1);
+            this.groupBox4.Controls.Add(this.lbxusuariosasignados);
+            this.groupBox4.Controls.Add(this.lbxusuariosinrol);
             this.groupBox4.Controls.Add(this.label8);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.button6);
-            this.groupBox4.Controls.Add(this.button5);
+            this.groupBox4.Controls.Add(this.btnquitarrol);
+            this.groupBox4.Controls.Add(this.btnasignarrol);
             this.groupBox4.Controls.Add(this.label25);
             this.groupBox4.Controls.Add(this.cmbroles);
             this.groupBox4.Location = new System.Drawing.Point(16, 9);
@@ -354,21 +370,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Asignacion";
             // 
-            // listBox2
+            // lbxusuariosasignados
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(268, 90);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(167, 95);
-            this.listBox2.TabIndex = 24;
+            this.lbxusuariosasignados.FormattingEnabled = true;
+            this.lbxusuariosasignados.Location = new System.Drawing.Point(268, 90);
+            this.lbxusuariosasignados.Name = "lbxusuariosasignados";
+            this.lbxusuariosasignados.Size = new System.Drawing.Size(167, 95);
+            this.lbxusuariosasignados.TabIndex = 24;
             // 
-            // listBox1
+            // lbxusuariosinrol
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(29, 90);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(167, 95);
-            this.listBox1.TabIndex = 23;
+            this.lbxusuariosinrol.FormattingEnabled = true;
+            this.lbxusuariosinrol.Location = new System.Drawing.Point(29, 90);
+            this.lbxusuariosinrol.Name = "lbxusuariosinrol";
+            this.lbxusuariosinrol.Size = new System.Drawing.Size(167, 95);
+            this.lbxusuariosinrol.TabIndex = 23;
+ 
             // 
             // label8
             // 
@@ -388,23 +405,24 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Usuarios sin rol:";
             // 
-            // button6
+            // btnquitarrol
             // 
-            this.button6.Location = new System.Drawing.Point(202, 162);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(60, 23);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "<<";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnquitarrol.Location = new System.Drawing.Point(202, 162);
+            this.btnquitarrol.Name = "btnquitarrol";
+            this.btnquitarrol.Size = new System.Drawing.Size(60, 23);
+            this.btnquitarrol.TabIndex = 20;
+            this.btnquitarrol.Text = "<<";
+            this.btnquitarrol.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnasignarrol
             // 
-            this.button5.Location = new System.Drawing.Point(202, 90);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(60, 23);
-            this.button5.TabIndex = 19;
-            this.button5.Text = ">>";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnasignarrol.Location = new System.Drawing.Point(202, 90);
+            this.btnasignarrol.Name = "btnasignarrol";
+            this.btnasignarrol.Size = new System.Drawing.Size(60, 23);
+            this.btnasignarrol.TabIndex = 19;
+            this.btnasignarrol.Text = ">>";
+            this.btnasignarrol.UseVisualStyleBackColor = true;
+            this.btnasignarrol.Click += new System.EventHandler(this.btnasignarrol_Click);
             // 
             // label25
             // 
@@ -422,6 +440,7 @@
             this.cmbroles.Name = "cmbroles";
             this.cmbroles.Size = new System.Drawing.Size(121, 21);
             this.cmbroles.TabIndex = 17;
+            this.cmbroles.SelectedIndexChanged += new System.EventHandler(this.cmbroles_SelectedIndexChanged);
             // 
             // tabPageConexiones
             // 
@@ -881,7 +900,7 @@
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.dataGridView2);
+            this.groupBox9.Controls.Add(this.dataGridViewregistrados);
             this.groupBox9.Location = new System.Drawing.Point(16, 81);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(468, 251);
@@ -889,18 +908,18 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Registrados";
             // 
-            // dataGridView2
+            // dataGridViewregistrados
             // 
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewregistrados.AllowUserToDeleteRows = false;
+            this.dataGridViewregistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewregistrados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.Carpeta});
-            this.dataGridView2.Location = new System.Drawing.Point(16, 28);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(437, 207);
-            this.dataGridView2.TabIndex = 0;
+            this.dataGridViewregistrados.Location = new System.Drawing.Point(16, 28);
+            this.dataGridViewregistrados.Name = "dataGridViewregistrados";
+            this.dataGridViewregistrados.ReadOnly = true;
+            this.dataGridViewregistrados.Size = new System.Drawing.Size(437, 207);
+            this.dataGridViewregistrados.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -916,9 +935,9 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.button7);
-            this.groupBox10.Controls.Add(this.button3);
-            this.groupBox10.Controls.Add(this.textBox2);
+            this.groupBox10.Controls.Add(this.btnconfirmar);
+            this.groupBox10.Controls.Add(this.btnseleccionarcarpeta);
+            this.groupBox10.Controls.Add(this.txtnombrecliente);
             this.groupBox10.Controls.Add(this.button2);
             this.groupBox10.Controls.Add(this.label7);
             this.groupBox10.Location = new System.Drawing.Point(16, 9);
@@ -928,31 +947,32 @@
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Agregar/Modificar";
             // 
-            // button7
+            // btnconfirmar
             // 
-            this.button7.Location = new System.Drawing.Point(352, 23);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Confirmar";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnconfirmar.Location = new System.Drawing.Point(352, 23);
+            this.btnconfirmar.Name = "btnconfirmar";
+            this.btnconfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnconfirmar.TabIndex = 9;
+            this.btnconfirmar.Text = "Confirmar";
+            this.btnconfirmar.UseVisualStyleBackColor = true;
+            this.btnconfirmar.Click += new System.EventHandler(this.btnconfirmar_Click);
             // 
-            // button3
+            // btnseleccionarcarpeta
             // 
-            this.button3.Location = new System.Drawing.Point(211, 23);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(117, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Seleccionar Carpeta";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnseleccionarcarpeta.Location = new System.Drawing.Point(211, 23);
+            this.btnseleccionarcarpeta.Name = "btnseleccionarcarpeta";
+            this.btnseleccionarcarpeta.Size = new System.Drawing.Size(117, 23);
+            this.btnseleccionarcarpeta.TabIndex = 8;
+            this.btnseleccionarcarpeta.Text = "Seleccionar Carpeta";
+            this.btnseleccionarcarpeta.UseVisualStyleBackColor = true;
+            this.btnseleccionarcarpeta.Click += new System.EventHandler(this.button3_Click);
             // 
-            // textBox2
+            // txtnombrecliente
             // 
-            this.textBox2.Location = new System.Drawing.Point(66, 25);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(127, 20);
-            this.textBox2.TabIndex = 4;
+            this.txtnombrecliente.Location = new System.Drawing.Point(66, 25);
+            this.txtnombrecliente.Name = "txtnombrecliente";
+            this.txtnombrecliente.Size = new System.Drawing.Size(127, 20);
+            this.txtnombrecliente.TabIndex = 4;
             // 
             // button2
             // 
@@ -981,6 +1001,7 @@
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnGuardar
             // 
@@ -997,6 +1018,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(529, 431);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
@@ -1012,7 +1034,7 @@
             this.tabControlAcciones.ResumeLayout(false);
             this.tabPageUsuarios.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewUsuarios)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPageRoles.ResumeLayout(false);
@@ -1034,7 +1056,7 @@
             this.groupBox8.PerformLayout();
             this.tabPageClientes.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewregistrados)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             this.ResumeLayout(false);
@@ -1051,13 +1073,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblrol;
-        private System.Windows.Forms.TextBox txtpassusuario;
+        private System.Windows.Forms.TextBox txtcorreousuario;
         private System.Windows.Forms.TextBox txtnombreusuario;
         private System.Windows.Forms.ComboBox cmbrolusuario;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblpassusuario;
         private System.Windows.Forms.Label lblnombreusuario;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewUsuarios;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox textBox8;
@@ -1086,42 +1108,38 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbxusuariosasignados;
+        private System.Windows.Forms.ListBox lbxusuariosinrol;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnquitarrol;
+        private System.Windows.Forms.Button btnasignarrol;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.ComboBox cmbroles;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridViewregistrados;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtnombrecliente;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtloginusuario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox txbUbicacion;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtcontraseñausuario;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnseleccionarcarpeta;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Carpeta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnconfirmar;
         private System.Windows.Forms.Button btnProbarBD;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnGuardar;
@@ -1130,6 +1148,11 @@
         private System.Windows.Forms.GroupBox groupBox11;
         private System.Windows.Forms.TextBox txbMensajeMail;
         private System.Windows.Forms.TextBox txbMensajeBD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
     }
 }
 
