@@ -22,15 +22,7 @@ namespace Fomularios
         public Configuraciones()
         {
             String conexion = LeerConfiguracion();
-    
-
-
             InitializeComponent();
-            CargarRoles();
-            CargarUsuarios();
-            CargarClientes();
-
-
             if (String.IsNullOrEmpty(conexion)) {
                 tabControlAcciones.GetControl(0).Enabled = false;
                 tabControlAcciones.GetControl(1).Enabled = false;
@@ -47,6 +39,24 @@ namespace Fomularios
         private void Acciones_Load(object sender, EventArgs e)
         {
             this.tabControlAcciones.Visible = true;
+            switch (tabControlAcciones.SelectedIndex) {
+                case 0:
+                    CargarUsuarios();
+                    break;
+                case 1:
+                    CargarRoles();
+                    break;
+                case 2:
+                    CargarConexiones();
+                    break;
+                case 3:
+                    CargarRutas();
+                    break;
+                case 4:
+                    CargarClientes();
+                    break;
+            }
+
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -129,6 +139,18 @@ namespace Fomularios
 
         }
 
+        private void CargarConexiones()
+        {
+            /*Carga de datos para la pestaña de conexiones*/
+
+        }
+
+        private void CargarRutas()
+        {
+            /*Carga de datos para la pestaña de rutas*/
+
+        }
+
         private void RegistrarUsuario()
         {
           
@@ -142,10 +164,10 @@ namespace Fomularios
 
         private void CargarUsuarios()
         {
-            this.dataGridViewUsuarios.Enabled = true;
-            
+            this.dataGridViewUsuarios.Enabled = true;      
  
             WSConfiguraciones.Usuario[] usuarios = ws.ListUsuarios();
+            this.dataGridViewUsuarios.Rows.Clear();
 
             foreach (WSConfiguraciones.Usuario usuario in usuarios)
             {
@@ -340,7 +362,7 @@ namespace Fomularios
                 str.Append("; Password = ");
                 str.Append(txbContraseña.Text);
             }
-            Console.WriteLine(str.ToString());
+            str.Append(";Connection Timeout = 5");
             return str.ToString(); 
         }
 
@@ -377,8 +399,15 @@ namespace Fomularios
  
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
-            RegistrarCliente();
-            CargarClientes();
+            try
+            {
+                RegistrarCliente();
+                CargarClientes();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
     }
 }

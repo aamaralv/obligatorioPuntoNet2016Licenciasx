@@ -152,6 +152,7 @@
             this.tabControlAcciones.Size = new System.Drawing.Size(507, 375);
             this.tabControlAcciones.TabIndex = 6;
             this.tabControlAcciones.Visible = false;
+            this.tabControlAcciones.SelectedIndexChanged += new System.EventHandler(this.Acciones_Load);
             // 
             // tabPageUsuarios
             // 
@@ -385,7 +386,6 @@
             this.lbxusuariosinrol.Name = "lbxusuariosinrol";
             this.lbxusuariosinrol.Size = new System.Drawing.Size(167, 95);
             this.lbxusuariosinrol.TabIndex = 23;
- 
             // 
             // label8
             // 
