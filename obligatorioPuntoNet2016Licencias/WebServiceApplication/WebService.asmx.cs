@@ -179,12 +179,18 @@ namespace WebServiceApplication{
             try{
                 using (LicenciasEntities DBF = new LicenciasEntities())
                 {
+                    List<Clientes> list = null;
                     Clientes clientes = new Clientes();
                     {
+                        DBF.Configuration.ProxyCreationEnabled = false;
+                        list = DBF.Clientes.ToList();
                         clientes.Nombre = nombre;
                         clientes.Carpeta = carpeta;
-                        DBF.Clientes.Add(clientes);
-                        DBF.SaveChanges();
+                        if (!list.Contains(clientes))
+                        {
+                            DBF.Clientes.Add(clientes);
+                            DBF.SaveChanges();
+                        }   
                     }
                 }
             }catch (Exception ex){

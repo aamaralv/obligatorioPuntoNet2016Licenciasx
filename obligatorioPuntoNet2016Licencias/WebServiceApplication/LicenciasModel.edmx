@@ -193,7 +193,7 @@
             <PropertyRef Name="Nombre" />
           </Key>
           <Property Name="Nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Carpeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Carpeta" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Licenciamiento" Relationship="Self.FK__Licenciam__Nombr__1CF15040" FromRole="Clientes" ToRole="Licenciamiento" />
         </EntityType>
         <EntityType Name="Configuraciones">
