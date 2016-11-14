@@ -477,19 +477,19 @@ namespace Fomularios.WSConfiguraciones {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/UpdateConfig", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public void UpdateConfig(int clave, string valor) {
+        public void UpdateConfig(string clave, string valor) {
             this.Invoke("UpdateConfig", new object[] {
                         clave,
                         valor});
         }
         
         /// <remarks/>
-        public void UpdateConfigAsync(int clave, string valor) {
+        public void UpdateConfigAsync(string clave, string valor) {
             this.UpdateConfigAsync(clave, valor, null);
         }
         
         /// <remarks/>
-        public void UpdateConfigAsync(int clave, string valor, object userState) {
+        public void UpdateConfigAsync(string clave, string valor, object userState) {
             if ((this.UpdateConfigOperationCompleted == null)) {
                 this.UpdateConfigOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdateConfigOperationCompleted);
             }

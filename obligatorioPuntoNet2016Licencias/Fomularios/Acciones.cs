@@ -30,7 +30,7 @@ namespace Fomularios
                 tabControlAcciones.GetControl(3).Enabled = false;
                 tabControlAcciones.GetControl(4).Enabled = false;
             }
-            
+            this.tabControlAcciones.Visible = true;
 
         }
 
@@ -38,7 +38,7 @@ namespace Fomularios
 
         private void Acciones_Load(object sender, EventArgs e)
         {
-            this.tabControlAcciones.Visible = true;
+            
             switch (tabControlAcciones.SelectedIndex) {
                 case 0:
                     CargarUsuarios();
@@ -63,8 +63,10 @@ namespace Fomularios
         {
             FolderBrowserDialog fdb = new FolderBrowserDialog();
             if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
-                MessageBox.Show(fdb.SelectedPath);
+                if (!String.IsNullOrEmpty(fdb.SelectedPath))
+                    lblRutaRepositorioNueva.Text = fdb.SelectedPath;
             }
+            
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -142,13 +144,17 @@ namespace Fomularios
         private void CargarConexiones()
         {
             /*Carga de datos para la pestaña de conexiones*/
+            WSConfiguraciones.Configuraciones[] configuraciones = ws.ListConfig();
+            //String clave = @"Ruta\|Repositorio";  Estaria bueno poder buscar por clave (tendria que devolver clave, valor el procedimiento del ws)
+            txbServidorCliente.Text = configuraciones[0].Valor;
+            lblRutaRepositorio.Text = configuraciones[9].Valor;
 
         }
 
         private void CargarRutas()
         {
             /*Carga de datos para la pestaña de rutas*/
-
+            
         }
 
         private void RegistrarUsuario()
@@ -320,8 +326,7 @@ namespace Fomularios
                 tabControlAcciones.GetControl(3).Enabled = true;
                 tabControlAcciones.GetControl(4).Enabled = true;
 
-                WSConfiguraciones.Configuraciones[] configuraciones = ws.ListConfig();
-                txbServidorCliente.Text = configuraciones[0].Valor;
+                CargarConexiones();
 
 
             }
@@ -408,6 +413,20 @@ namespace Fomularios
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void btnConfirmarNuevaRuta_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String clave = @"Ruta\|Repositorio";
+                ws.UpdateConfig(clave, lblRutaRepositorioNueva.Text);
+                CargarRutas();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -101,6 +101,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.lblRutaRepositorio = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.label29 = new System.Windows.Forms.Label();
@@ -117,6 +118,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnConfirmarNuevaRuta = new System.Windows.Forms.Button();
+            this.lblRutaRepositorioNueva = new System.Windows.Forms.Label();
             this.tabControlAcciones.SuspendLayout();
             this.tabPageUsuarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -179,7 +182,7 @@
             // dataGridViewUsuarios
             // 
             this.dataGridViewUsuarios.AllowUserToDeleteRows = false;
-            this.dataGridViewUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -199,35 +202,30 @@
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 41;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 69;
             // 
             // Usuario
             // 
             this.Usuario.HeaderText = "Usuario";
             this.Usuario.Name = "Usuario";
             this.Usuario.ReadOnly = true;
-            this.Usuario.Width = 68;
             // 
             // Rol
             // 
             this.Rol.HeaderText = "Rol";
             this.Rol.Name = "Rol";
             this.Rol.ReadOnly = true;
-            this.Rol.Width = 48;
             // 
             // Correo
             // 
             this.Correo.HeaderText = "Correo";
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
-            this.Correo.Width = 63;
             // 
             // groupBox1
             // 
@@ -784,7 +782,7 @@
             this.groupBox7.Controls.Add(this.button9);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.label4);
-            this.groupBox7.Location = new System.Drawing.Point(16, 116);
+            this.groupBox7.Location = new System.Drawing.Point(16, 163);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(469, 162);
             this.groupBox7.TabIndex = 7;
@@ -849,20 +847,32 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.lblRutaRepositorioNueva);
+            this.groupBox8.Controls.Add(this.btnConfirmarNuevaRuta);
+            this.groupBox8.Controls.Add(this.lblRutaRepositorio);
             this.groupBox8.Controls.Add(this.label1);
             this.groupBox8.Controls.Add(this.button8);
             this.groupBox8.Controls.Add(this.label29);
             this.groupBox8.Location = new System.Drawing.Point(16, 9);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(469, 91);
+            this.groupBox8.Size = new System.Drawing.Size(469, 130);
             this.groupBox8.TabIndex = 6;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Repositorio";
             // 
+            // lblRutaRepositorio
+            // 
+            this.lblRutaRepositorio.AutoSize = true;
+            this.lblRutaRepositorio.Location = new System.Drawing.Point(81, 94);
+            this.lblRutaRepositorio.Name = "lblRutaRepositorio";
+            this.lblRutaRepositorio.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaRepositorio.TabIndex = 9;
+            this.lblRutaRepositorio.Text = "Ninguna";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 66);
+            this.label1.Location = new System.Drawing.Point(15, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 8;
@@ -870,11 +880,11 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(187, 27);
+            this.button8.Location = new System.Drawing.Point(84, 27);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(118, 23);
             this.button8.TabIndex = 7;
-            this.button8.Text = "Seleccionar Carpeta";
+            this.button8.Text = "Seleccionar...";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -883,9 +893,9 @@
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(15, 32);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(131, 13);
+            this.label29.Size = new System.Drawing.Size(63, 13);
             this.label29.TabIndex = 6;
-            this.label29.Text = "Nueva ruta del repositorio:";
+            this.label29.Text = "Nueva ruta:";
             // 
             // tabPageClientes
             // 
@@ -911,6 +921,8 @@
             // dataGridViewregistrados
             // 
             this.dataGridViewregistrados.AllowUserToDeleteRows = false;
+            this.dataGridViewregistrados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewregistrados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.dataGridViewregistrados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewregistrados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -918,6 +930,7 @@
             this.dataGridViewregistrados.Location = new System.Drawing.Point(16, 28);
             this.dataGridViewregistrados.Name = "dataGridViewregistrados";
             this.dataGridViewregistrados.ReadOnly = true;
+            this.dataGridViewregistrados.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridViewregistrados.Size = new System.Drawing.Size(437, 207);
             this.dataGridViewregistrados.TabIndex = 0;
             // 
@@ -1013,6 +1026,25 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnConfirmarNuevaRuta
+            // 
+            this.btnConfirmarNuevaRuta.Location = new System.Drawing.Point(230, 27);
+            this.btnConfirmarNuevaRuta.Name = "btnConfirmarNuevaRuta";
+            this.btnConfirmarNuevaRuta.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmarNuevaRuta.TabIndex = 10;
+            this.btnConfirmarNuevaRuta.Text = "Confirmar";
+            this.btnConfirmarNuevaRuta.UseVisualStyleBackColor = true;
+            this.btnConfirmarNuevaRuta.Click += new System.EventHandler(this.btnConfirmarNuevaRuta_Click);
+            // 
+            // lblRutaRepositorioNueva
+            // 
+            this.lblRutaRepositorioNueva.AutoSize = true;
+            this.lblRutaRepositorioNueva.Location = new System.Drawing.Point(81, 66);
+            this.lblRutaRepositorioNueva.Name = "lblRutaRepositorioNueva";
+            this.lblRutaRepositorioNueva.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaRepositorioNueva.TabIndex = 11;
+            this.lblRutaRepositorioNueva.Text = "Ninguna";
             // 
             // Configuraciones
             // 
@@ -1153,6 +1185,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
+        private System.Windows.Forms.Label lblRutaRepositorio;
+        private System.Windows.Forms.Label lblRutaRepositorioNueva;
+        private System.Windows.Forms.Button btnConfirmarNuevaRuta;
     }
 }
 

@@ -255,16 +255,21 @@ namespace WebServiceApplication{
 
         //Actualizar configuracion
         [WebMethod]
-        public void UpdateConfig(int clave, String valor){
+        public void UpdateConfig(String clave, String valor){
             try{
                 using (LicenciasEntities DBF = new LicenciasEntities())
                 {
-                    var original = DBF.Configuraciones.Find(clave);
-                    if (original != null){
-                        original.Valor = valor;
-                        DBF.SaveChanges();
-                    }
-
+                    //var original = DBF.Configuraciones.Find(clave);
+                    //if (original != null){
+                    //    original.Valor = valor;
+                    //    DBF.SaveChanges();
+                    //}
+                    Configuraciones configuraciones = new Configuraciones();
+                    DBF.Configuraciones.Where(Configuraciones => configuraciones.Clave == clave);
+                    configuraciones.Clave = clave.Replace(@"\","");
+                    configuraciones.Valor = valor;
+                    DBF.Entry(configuraciones).State = EntityState.Modified;
+                    DBF.SaveChanges();
                 }
             }catch (Exception ex){
                 System.Console.Write(ex.StackTrace);
