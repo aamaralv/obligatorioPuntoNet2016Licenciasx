@@ -126,6 +126,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControlAcciones.SuspendLayout();
             this.tabPageUsuarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -460,11 +461,12 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.button3);
             this.groupBox11.Controls.Add(this.txbMensajeMail);
             this.groupBox11.Controls.Add(this.btnProbarMail);
             this.groupBox11.Location = new System.Drawing.Point(247, 224);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(238, 100);
+            this.groupBox11.Size = new System.Drawing.Size(238, 109);
             this.groupBox11.TabIndex = 23;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Prueba Mail";
@@ -473,15 +475,15 @@
             // 
             this.txbMensajeMail.BackColor = System.Drawing.SystemColors.Control;
             this.txbMensajeMail.Enabled = false;
-            this.txbMensajeMail.Location = new System.Drawing.Point(18, 67);
+            this.txbMensajeMail.Location = new System.Drawing.Point(6, 48);
             this.txbMensajeMail.Name = "txbMensajeMail";
-            this.txbMensajeMail.Size = new System.Drawing.Size(208, 20);
+            this.txbMensajeMail.Size = new System.Drawing.Size(226, 20);
             this.txbMensajeMail.TabIndex = 16;
             this.txbMensajeMail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnProbarMail
             // 
-            this.btnProbarMail.Location = new System.Drawing.Point(80, 28);
+            this.btnProbarMail.Location = new System.Drawing.Point(80, 19);
             this.btnProbarMail.Name = "btnProbarMail";
             this.btnProbarMail.Size = new System.Drawing.Size(93, 23);
             this.btnProbarMail.TabIndex = 21;
@@ -490,11 +492,12 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnGuardar);
             this.groupBox3.Controls.Add(this.txbMensajeBD);
             this.groupBox3.Controls.Add(this.btnProbarBD);
             this.groupBox3.Location = new System.Drawing.Point(14, 224);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(227, 100);
+            this.groupBox3.Size = new System.Drawing.Size(227, 109);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pruebas BD";
@@ -503,15 +506,15 @@
             // 
             this.txbMensajeBD.BackColor = System.Drawing.SystemColors.Control;
             this.txbMensajeBD.Enabled = false;
-            this.txbMensajeBD.Location = new System.Drawing.Point(11, 67);
+            this.txbMensajeBD.Location = new System.Drawing.Point(6, 48);
             this.txbMensajeBD.Name = "txbMensajeBD";
-            this.txbMensajeBD.Size = new System.Drawing.Size(208, 20);
+            this.txbMensajeBD.Size = new System.Drawing.Size(215, 20);
             this.txbMensajeBD.TabIndex = 15;
             this.txbMensajeBD.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnProbarBD
             // 
-            this.btnProbarBD.Location = new System.Drawing.Point(71, 28);
+            this.btnProbarBD.Location = new System.Drawing.Point(71, 19);
             this.btnProbarBD.Name = "btnProbarBD";
             this.btnProbarBD.Size = new System.Drawing.Size(94, 23);
             this.btnProbarBD.TabIndex = 14;
@@ -1105,7 +1108,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(361, 396);
+            this.btnGuardar.Location = new System.Drawing.Point(80, 74);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 8;
@@ -1113,13 +1116,22 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // button3
+            // 
+            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.Location = new System.Drawing.Point(89, 74);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 16;
+            this.button3.Text = "Guardar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
             // Configuraciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(529, 431);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.tabControlAcciones);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -1261,6 +1273,7 @@
         private System.Windows.Forms.Label lblRutaNuevaOI;
         private System.Windows.Forms.Label lblRutaNuevaLicencia;
         private System.Windows.Forms.Button btnConfirmarOI;
+        private System.Windows.Forms.Button button3;
     }
 }
 
