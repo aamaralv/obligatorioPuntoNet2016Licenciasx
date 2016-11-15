@@ -94,6 +94,12 @@
             this.label24 = new System.Windows.Forms.Label();
             this.tabPageRutas = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.lblRutaOI = new System.Windows.Forms.Label();
+            this.lblRutaLicencia = new System.Windows.Forms.Label();
+            this.lblRutaNuevaOI = new System.Windows.Forms.Label();
+            this.lblRutaNuevaLicencia = new System.Windows.Forms.Label();
+            this.btnConfirmarOI = new System.Windows.Forms.Button();
+            this.btnConfirmarLicencia = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSeleccionarOI = new System.Windows.Forms.Button();
@@ -120,12 +126,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnConfirmarLicencia = new System.Windows.Forms.Button();
-            this.btnConfirmarOI = new System.Windows.Forms.Button();
-            this.lblRutaNuevaLicencia = new System.Windows.Forms.Label();
-            this.lblRutaNuevaOI = new System.Windows.Forms.Label();
-            this.lblRutaLicencia = new System.Windows.Forms.Label();
-            this.lblRutaOI = new System.Windows.Forms.Label();
             this.tabControlAcciones.SuspendLayout();
             this.tabPageUsuarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -800,6 +800,62 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Plantillas Genericas";
             // 
+            // lblRutaOI
+            // 
+            this.lblRutaOI.AutoSize = true;
+            this.lblRutaOI.Location = new System.Drawing.Point(105, 183);
+            this.lblRutaOI.Name = "lblRutaOI";
+            this.lblRutaOI.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaOI.TabIndex = 15;
+            this.lblRutaOI.Text = "Ninguna";
+            // 
+            // lblRutaLicencia
+            // 
+            this.lblRutaLicencia.AutoSize = true;
+            this.lblRutaLicencia.Location = new System.Drawing.Point(105, 93);
+            this.lblRutaLicencia.Name = "lblRutaLicencia";
+            this.lblRutaLicencia.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaLicencia.TabIndex = 12;
+            this.lblRutaLicencia.Text = "Ninguna";
+            // 
+            // lblRutaNuevaOI
+            // 
+            this.lblRutaNuevaOI.AutoSize = true;
+            this.lblRutaNuevaOI.Location = new System.Drawing.Point(208, 125);
+            this.lblRutaNuevaOI.Name = "lblRutaNuevaOI";
+            this.lblRutaNuevaOI.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaNuevaOI.TabIndex = 14;
+            this.lblRutaNuevaOI.Text = "Ninguna";
+            // 
+            // lblRutaNuevaLicencia
+            // 
+            this.lblRutaNuevaLicencia.AutoSize = true;
+            this.lblRutaNuevaLicencia.Location = new System.Drawing.Point(208, 32);
+            this.lblRutaNuevaLicencia.Name = "lblRutaNuevaLicencia";
+            this.lblRutaNuevaLicencia.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaNuevaLicencia.TabIndex = 12;
+            this.lblRutaNuevaLicencia.Text = "Ninguna";
+            // 
+            // btnConfirmarOI
+            // 
+            this.btnConfirmarOI.Location = new System.Drawing.Point(108, 149);
+            this.btnConfirmarOI.Name = "btnConfirmarOI";
+            this.btnConfirmarOI.Size = new System.Drawing.Size(80, 23);
+            this.btnConfirmarOI.TabIndex = 13;
+            this.btnConfirmarOI.Text = "Confirmar";
+            this.btnConfirmarOI.UseVisualStyleBackColor = true;
+            this.btnConfirmarOI.Click += new System.EventHandler(this.btnConfirmarOI_Click);
+            // 
+            // btnConfirmarLicencia
+            // 
+            this.btnConfirmarLicencia.Location = new System.Drawing.Point(108, 56);
+            this.btnConfirmarLicencia.Name = "btnConfirmarLicencia";
+            this.btnConfirmarLicencia.Size = new System.Drawing.Size(80, 23);
+            this.btnConfirmarLicencia.TabIndex = 12;
+            this.btnConfirmarLicencia.Text = "Confirmar";
+            this.btnConfirmarLicencia.UseVisualStyleBackColor = true;
+            this.btnConfirmarLicencia.Click += new System.EventHandler(this.btnConfirmarLicencia_Click);
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -812,7 +868,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 88);
+            this.label2.Location = new System.Drawing.Point(15, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 10;
@@ -893,7 +949,7 @@
             // lblRutaRepositorio
             // 
             this.lblRutaRepositorio.AutoSize = true;
-            this.lblRutaRepositorio.Location = new System.Drawing.Point(105, 94);
+            this.lblRutaRepositorio.Location = new System.Drawing.Point(105, 93);
             this.lblRutaRepositorio.Name = "lblRutaRepositorio";
             this.lblRutaRepositorio.Size = new System.Drawing.Size(47, 13);
             this.lblRutaRepositorio.TabIndex = 9;
@@ -902,7 +958,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 94);
+            this.label1.Location = new System.Drawing.Point(15, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 13);
             this.label1.TabIndex = 8;
@@ -1056,60 +1112,6 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnConfirmarLicencia
-            // 
-            this.btnConfirmarLicencia.Location = new System.Drawing.Point(108, 56);
-            this.btnConfirmarLicencia.Name = "btnConfirmarLicencia";
-            this.btnConfirmarLicencia.Size = new System.Drawing.Size(80, 23);
-            this.btnConfirmarLicencia.TabIndex = 12;
-            this.btnConfirmarLicencia.Text = "Confirmar";
-            this.btnConfirmarLicencia.UseVisualStyleBackColor = true;
-            // 
-            // btnConfirmarOI
-            // 
-            this.btnConfirmarOI.Location = new System.Drawing.Point(108, 149);
-            this.btnConfirmarOI.Name = "btnConfirmarOI";
-            this.btnConfirmarOI.Size = new System.Drawing.Size(80, 23);
-            this.btnConfirmarOI.TabIndex = 13;
-            this.btnConfirmarOI.Text = "Confirmar";
-            this.btnConfirmarOI.UseVisualStyleBackColor = true;
-            // 
-            // lblRutaNuevaLicencia
-            // 
-            this.lblRutaNuevaLicencia.AutoSize = true;
-            this.lblRutaNuevaLicencia.Location = new System.Drawing.Point(208, 32);
-            this.lblRutaNuevaLicencia.Name = "lblRutaNuevaLicencia";
-            this.lblRutaNuevaLicencia.Size = new System.Drawing.Size(47, 13);
-            this.lblRutaNuevaLicencia.TabIndex = 12;
-            this.lblRutaNuevaLicencia.Text = "Ninguna";
-            // 
-            // lblRutaNuevaOI
-            // 
-            this.lblRutaNuevaOI.AutoSize = true;
-            this.lblRutaNuevaOI.Location = new System.Drawing.Point(208, 125);
-            this.lblRutaNuevaOI.Name = "lblRutaNuevaOI";
-            this.lblRutaNuevaOI.Size = new System.Drawing.Size(47, 13);
-            this.lblRutaNuevaOI.TabIndex = 14;
-            this.lblRutaNuevaOI.Text = "Ninguna";
-            // 
-            // lblRutaLicencia
-            // 
-            this.lblRutaLicencia.AutoSize = true;
-            this.lblRutaLicencia.Location = new System.Drawing.Point(105, 88);
-            this.lblRutaLicencia.Name = "lblRutaLicencia";
-            this.lblRutaLicencia.Size = new System.Drawing.Size(47, 13);
-            this.lblRutaLicencia.TabIndex = 12;
-            this.lblRutaLicencia.Text = "Ninguna";
-            // 
-            // lblRutaOI
-            // 
-            this.lblRutaOI.AutoSize = true;
-            this.lblRutaOI.Location = new System.Drawing.Point(105, 183);
-            this.lblRutaOI.Name = "lblRutaOI";
-            this.lblRutaOI.Size = new System.Drawing.Size(47, 13);
-            this.lblRutaOI.TabIndex = 15;
-            this.lblRutaOI.Text = "Ninguna";
             // 
             // Configuraciones
             // 

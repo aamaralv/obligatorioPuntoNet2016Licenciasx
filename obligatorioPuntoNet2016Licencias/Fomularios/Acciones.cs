@@ -143,7 +143,9 @@ namespace Fomularios
             //String clave = @"Ruta\|Repositorio";  Estaria bueno poder buscar por clave (tendria que devolver clave, valor el procedimiento del ws)
             txbServidorCliente.Text = configuraciones[0].Valor;
             lblRutaRepositorio.Text = configuraciones[9].Valor;
-
+            lblRutaOI.Text = configuraciones[8].Valor;
+            lblRutaLicencia.Text = configuraciones[7].Valor;
+       
         }
 
         private void CargarRutas()
@@ -414,9 +416,56 @@ namespace Fomularios
         {
             try
             {
-                String clave = @"Ruta\|Repositorio";
-                ws.UpdateConfig(clave, lblRutaRepositorioNueva.Text);
-                CargarRutas();
+                if (String.IsNullOrEmpty(lblRutaRepositorioNueva.Text))
+                    MessageBox.Show("Seleccione una ruta antes de continuar.");
+                else
+                {
+                    String clave = @"Ruta\|Repositorio";
+                    ws.UpdateConfig(clave, lblRutaRepositorioNueva.Text);
+                    CargarConexiones(); //CargarRutas();   Hay que mejorarlo porque esta chancho
+                    MessageBox.Show("Actualización exitosa.");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnConfirmarLicencia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(lblRutaNuevaLicencia.Text))
+                    MessageBox.Show("Seleccione un archivo antes de continuar.");
+                else
+                {
+                    String clave = @"Ruta\|Licencia";
+                    ws.UpdateConfig(clave, lblRutaNuevaLicencia.Text);
+                    CargarConexiones(); //CargarRutas();   Hay que mejorarlo porque esta chancho
+                    MessageBox.Show("Actualización exitosa.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnConfirmarOI_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (String.IsNullOrEmpty(lblRutaNuevaOI.Text))
+                    MessageBox.Show("Seleccione una archivo antes de continuar.");
+                else {
+                    String clave = @"Ruta\|OI";
+                    ws.UpdateConfig(clave, lblRutaNuevaOI.Text);
+                    CargarConexiones(); //CargarRutas();   Hay que mejorarlo porque esta chancho
+                    MessageBox.Show("Actualización exitosa.");
+
+                }
             }
             catch (Exception ex)
             {
