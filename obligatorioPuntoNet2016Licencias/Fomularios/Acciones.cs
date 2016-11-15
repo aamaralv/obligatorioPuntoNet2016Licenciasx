@@ -71,27 +71,27 @@ namespace Fomularios
 
         private void btnSeleccionarLicencia_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fdb = new FolderBrowserDialog();
-            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (!String.IsNullOrEmpty(fdb.SelectedPath))
-                    lblRutaNuevaLicencia.Text = fdb.SelectedPath;
+                if (!String.IsNullOrEmpty(ofd.FileName.ToString()))
+                    lblRutaNuevaLicencia.Text = ofd.FileName.ToString();
             }
         }
 
         private void btnSeleccionarOI_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fdb = new FolderBrowserDialog();
-            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if (!String.IsNullOrEmpty(fdb.SelectedPath))
-                    lblRutaNuevaOI.Text = fdb.SelectedPath;
+                if (!String.IsNullOrEmpty(ofd.FileName.ToString()))
+                    lblRutaNuevaOI.Text = ofd.FileName.ToString();
             }
         }
 
         
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnSeleccionarCarpetaCliente_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fdb = new FolderBrowserDialog();
             if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -471,6 +471,11 @@ namespace Fomularios
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnGuardarMail_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

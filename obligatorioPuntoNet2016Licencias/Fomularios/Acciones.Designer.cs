@@ -61,9 +61,11 @@
             this.cmbroles = new System.Windows.Forms.ComboBox();
             this.tabPageConexiones = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnGuardarMail = new System.Windows.Forms.Button();
             this.txbMensajeMail = new System.Windows.Forms.TextBox();
             this.btnProbarMail = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnGuardarBD = new System.Windows.Forms.Button();
             this.txbMensajeBD = new System.Windows.Forms.TextBox();
             this.btnProbarBD = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -120,13 +122,11 @@
             this.Carpeta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.btnconfirmar = new System.Windows.Forms.Button();
-            this.btnseleccionarcarpeta = new System.Windows.Forms.Button();
+            this.btnSeleccionarCarpetaCliente = new System.Windows.Forms.Button();
             this.txtnombrecliente = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.tabControlAcciones.SuspendLayout();
             this.tabPageUsuarios.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -461,7 +461,7 @@
             // 
             // groupBox11
             // 
-            this.groupBox11.Controls.Add(this.button3);
+            this.groupBox11.Controls.Add(this.btnGuardarMail);
             this.groupBox11.Controls.Add(this.txbMensajeMail);
             this.groupBox11.Controls.Add(this.btnProbarMail);
             this.groupBox11.Location = new System.Drawing.Point(247, 224);
@@ -470,6 +470,17 @@
             this.groupBox11.TabIndex = 23;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Prueba Mail";
+            // 
+            // btnGuardarMail
+            // 
+            this.btnGuardarMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarMail.Location = new System.Drawing.Point(89, 74);
+            this.btnGuardarMail.Name = "btnGuardarMail";
+            this.btnGuardarMail.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarMail.TabIndex = 16;
+            this.btnGuardarMail.Text = "Guardar";
+            this.btnGuardarMail.UseVisualStyleBackColor = true;
+            this.btnGuardarMail.Click += new System.EventHandler(this.btnGuardarMail_Click);
             // 
             // txbMensajeMail
             // 
@@ -492,7 +503,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.btnGuardar);
+            this.groupBox3.Controls.Add(this.btnGuardarBD);
             this.groupBox3.Controls.Add(this.txbMensajeBD);
             this.groupBox3.Controls.Add(this.btnProbarBD);
             this.groupBox3.Location = new System.Drawing.Point(14, 224);
@@ -501,6 +512,17 @@
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Pruebas BD";
+            // 
+            // btnGuardarBD
+            // 
+            this.btnGuardarBD.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardarBD.Location = new System.Drawing.Point(80, 74);
+            this.btnGuardarBD.Name = "btnGuardarBD";
+            this.btnGuardarBD.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarBD.TabIndex = 8;
+            this.btnGuardarBD.Text = "Guardar";
+            this.btnGuardarBD.UseVisualStyleBackColor = true;
+            this.btnGuardarBD.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txbMensajeBD
             // 
@@ -1038,7 +1060,7 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.btnconfirmar);
-            this.groupBox10.Controls.Add(this.btnseleccionarcarpeta);
+            this.groupBox10.Controls.Add(this.btnSeleccionarCarpetaCliente);
             this.groupBox10.Controls.Add(this.txtnombrecliente);
             this.groupBox10.Controls.Add(this.button2);
             this.groupBox10.Controls.Add(this.label7);
@@ -1059,15 +1081,15 @@
             this.btnconfirmar.UseVisualStyleBackColor = true;
             this.btnconfirmar.Click += new System.EventHandler(this.btnconfirmar_Click);
             // 
-            // btnseleccionarcarpeta
+            // btnSeleccionarCarpetaCliente
             // 
-            this.btnseleccionarcarpeta.Location = new System.Drawing.Point(211, 23);
-            this.btnseleccionarcarpeta.Name = "btnseleccionarcarpeta";
-            this.btnseleccionarcarpeta.Size = new System.Drawing.Size(117, 23);
-            this.btnseleccionarcarpeta.TabIndex = 8;
-            this.btnseleccionarcarpeta.Text = "Seleccionar Carpeta";
-            this.btnseleccionarcarpeta.UseVisualStyleBackColor = true;
-            this.btnseleccionarcarpeta.Click += new System.EventHandler(this.button3_Click);
+            this.btnSeleccionarCarpetaCliente.Location = new System.Drawing.Point(211, 23);
+            this.btnSeleccionarCarpetaCliente.Name = "btnSeleccionarCarpetaCliente";
+            this.btnSeleccionarCarpetaCliente.Size = new System.Drawing.Size(117, 23);
+            this.btnSeleccionarCarpetaCliente.TabIndex = 8;
+            this.btnSeleccionarCarpetaCliente.Text = "Seleccionar Carpeta";
+            this.btnSeleccionarCarpetaCliente.UseVisualStyleBackColor = true;
+            this.btnSeleccionarCarpetaCliente.Click += new System.EventHandler(this.btnSeleccionarCarpetaCliente_Click);
             // 
             // txtnombrecliente
             // 
@@ -1104,27 +1126,6 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardar.Location = new System.Drawing.Point(80, 74);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 8;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // button3
-            // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(89, 74);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // Configuraciones
             // 
@@ -1244,7 +1245,7 @@
         private System.Windows.Forms.TextBox txbUbicacion;
         private System.Windows.Forms.TextBox txtcontraseñausuario;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnseleccionarcarpeta;
+        private System.Windows.Forms.Button btnSeleccionarCarpetaCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Carpeta;
         private System.Windows.Forms.Label label1;
@@ -1253,7 +1254,7 @@
         private System.Windows.Forms.Button btnconfirmar;
         private System.Windows.Forms.Button btnProbarBD;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnGuardarBD;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnProbarMail;
         private System.Windows.Forms.GroupBox groupBox11;
@@ -1273,7 +1274,7 @@
         private System.Windows.Forms.Label lblRutaNuevaOI;
         private System.Windows.Forms.Label lblRutaNuevaLicencia;
         private System.Windows.Forms.Button btnConfirmarOI;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnGuardarMail;
     }
 }
 
