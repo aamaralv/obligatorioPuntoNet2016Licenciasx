@@ -59,7 +59,7 @@ namespace Fomularios
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void btnSeleccionarNuevaRuta_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fdb = new FolderBrowserDialog();
             if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
@@ -69,32 +69,27 @@ namespace Fomularios
             
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnSeleccionarLicencia_Click(object sender, EventArgs e)
         {
-            
-           OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "BAK|*.bak";
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            FolderBrowserDialog fdb = new FolderBrowserDialog();
+            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("File Name:"+ ofd.FileName+ " Safe File Name:"+ ofd.SafeFileName);
+                if (!String.IsNullOrEmpty(fdb.SelectedPath))
+                    lblRutaNuevaLicencia.Text = fdb.SelectedPath;
             }
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void btnSeleccionarOI_Click(object sender, EventArgs e)
         {
-
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Filter = "BAK|*.bak";
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            FolderBrowserDialog fdb = new FolderBrowserDialog();
+            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                MessageBox.Show("File Name:" + ofd.FileName + " Safe File Name:" + ofd.SafeFileName);
+                if (!String.IsNullOrEmpty(fdb.SelectedPath))
+                    lblRutaNuevaOI.Text = fdb.SelectedPath;
             }
         }
 
-        private void lblpassusuario_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button3_Click(object sender, EventArgs e)
         {
