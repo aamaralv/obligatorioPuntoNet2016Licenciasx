@@ -830,40 +830,36 @@
             this.lblRutaOI.AutoSize = true;
             this.lblRutaOI.Location = new System.Drawing.Point(105, 183);
             this.lblRutaOI.Name = "lblRutaOI";
-            this.lblRutaOI.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaOI.Size = new System.Drawing.Size(0, 13);
             this.lblRutaOI.TabIndex = 15;
-            this.lblRutaOI.Text = "Ninguna";
             // 
             // lblRutaLicencia
             // 
             this.lblRutaLicencia.AutoSize = true;
-            this.lblRutaLicencia.Location = new System.Drawing.Point(105, 93);
+            this.lblRutaLicencia.Location = new System.Drawing.Point(105, 86);
             this.lblRutaLicencia.Name = "lblRutaLicencia";
-            this.lblRutaLicencia.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaLicencia.Size = new System.Drawing.Size(0, 13);
             this.lblRutaLicencia.TabIndex = 12;
-            this.lblRutaLicencia.Text = "Ninguna";
             // 
             // lblRutaNuevaOI
             // 
             this.lblRutaNuevaOI.AutoSize = true;
-            this.lblRutaNuevaOI.Location = new System.Drawing.Point(208, 125);
+            this.lblRutaNuevaOI.Location = new System.Drawing.Point(105, 154);
             this.lblRutaNuevaOI.Name = "lblRutaNuevaOI";
-            this.lblRutaNuevaOI.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaNuevaOI.Size = new System.Drawing.Size(0, 13);
             this.lblRutaNuevaOI.TabIndex = 14;
-            this.lblRutaNuevaOI.Text = "Ninguna";
             // 
             // lblRutaNuevaLicencia
             // 
             this.lblRutaNuevaLicencia.AutoSize = true;
-            this.lblRutaNuevaLicencia.Location = new System.Drawing.Point(208, 32);
+            this.lblRutaNuevaLicencia.Location = new System.Drawing.Point(105, 61);
             this.lblRutaNuevaLicencia.Name = "lblRutaNuevaLicencia";
-            this.lblRutaNuevaLicencia.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaNuevaLicencia.Size = new System.Drawing.Size(0, 13);
             this.lblRutaNuevaLicencia.TabIndex = 12;
-            this.lblRutaNuevaLicencia.Text = "Ninguna";
             // 
             // btnConfirmarOI
             // 
-            this.btnConfirmarOI.Location = new System.Drawing.Point(108, 149);
+            this.btnConfirmarOI.Location = new System.Drawing.Point(108, 115);
             this.btnConfirmarOI.Name = "btnConfirmarOI";
             this.btnConfirmarOI.Size = new System.Drawing.Size(80, 23);
             this.btnConfirmarOI.TabIndex = 13;
@@ -873,7 +869,7 @@
             // 
             // btnConfirmarLicencia
             // 
-            this.btnConfirmarLicencia.Location = new System.Drawing.Point(108, 56);
+            this.btnConfirmarLicencia.Location = new System.Drawing.Point(108, 27);
             this.btnConfirmarLicencia.Name = "btnConfirmarLicencia";
             this.btnConfirmarLicencia.Size = new System.Drawing.Size(80, 23);
             this.btnConfirmarLicencia.TabIndex = 12;
@@ -893,7 +889,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 93);
+            this.label2.Location = new System.Drawing.Point(15, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 10;
@@ -901,7 +897,7 @@
             // 
             // btnSeleccionarOI
             // 
-            this.btnSeleccionarOI.Location = new System.Drawing.Point(108, 120);
+            this.btnSeleccionarOI.Location = new System.Drawing.Point(18, 115);
             this.btnSeleccionarOI.Name = "btnSeleccionarOI";
             this.btnSeleccionarOI.Size = new System.Drawing.Size(80, 23);
             this.btnSeleccionarOI.TabIndex = 9;
@@ -911,7 +907,7 @@
             // 
             // btnSeleccionarLicencia
             // 
-            this.btnSeleccionarLicencia.Location = new System.Drawing.Point(108, 27);
+            this.btnSeleccionarLicencia.Location = new System.Drawing.Point(18, 27);
             this.btnSeleccionarLicencia.Name = "btnSeleccionarLicencia";
             this.btnSeleccionarLicencia.Size = new System.Drawing.Size(80, 23);
             this.btnSeleccionarLicencia.TabIndex = 8;
@@ -922,7 +918,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 125);
+            this.label6.Location = new System.Drawing.Point(15, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 7;
@@ -931,7 +927,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 32);
+            this.label4.Location = new System.Drawing.Point(15, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 13);
             this.label4.TabIndex = 6;
@@ -955,15 +951,14 @@
             // lblRutaRepositorioNueva
             // 
             this.lblRutaRepositorioNueva.AutoSize = true;
-            this.lblRutaRepositorioNueva.Location = new System.Drawing.Point(208, 32);
+            this.lblRutaRepositorioNueva.Location = new System.Drawing.Point(105, 65);
             this.lblRutaRepositorioNueva.Name = "lblRutaRepositorioNueva";
-            this.lblRutaRepositorioNueva.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaRepositorioNueva.Size = new System.Drawing.Size(0, 13);
             this.lblRutaRepositorioNueva.TabIndex = 11;
-            this.lblRutaRepositorioNueva.Text = "Ninguna";
             // 
             // btnConfirmarNuevaRuta
             // 
-            this.btnConfirmarNuevaRuta.Location = new System.Drawing.Point(108, 56);
+            this.btnConfirmarNuevaRuta.Location = new System.Drawing.Point(108, 27);
             this.btnConfirmarNuevaRuta.Name = "btnConfirmarNuevaRuta";
             this.btnConfirmarNuevaRuta.Size = new System.Drawing.Size(80, 23);
             this.btnConfirmarNuevaRuta.TabIndex = 10;
@@ -976,9 +971,8 @@
             this.lblRutaRepositorio.AutoSize = true;
             this.lblRutaRepositorio.Location = new System.Drawing.Point(105, 93);
             this.lblRutaRepositorio.Name = "lblRutaRepositorio";
-            this.lblRutaRepositorio.Size = new System.Drawing.Size(47, 13);
+            this.lblRutaRepositorio.Size = new System.Drawing.Size(0, 13);
             this.lblRutaRepositorio.TabIndex = 9;
-            this.lblRutaRepositorio.Text = "Ninguna";
             // 
             // label1
             // 
@@ -991,7 +985,7 @@
             // 
             // btnSeleccionarNuevaRuta
             // 
-            this.btnSeleccionarNuevaRuta.Location = new System.Drawing.Point(108, 27);
+            this.btnSeleccionarNuevaRuta.Location = new System.Drawing.Point(18, 27);
             this.btnSeleccionarNuevaRuta.Name = "btnSeleccionarNuevaRuta";
             this.btnSeleccionarNuevaRuta.Size = new System.Drawing.Size(80, 23);
             this.btnSeleccionarNuevaRuta.TabIndex = 7;
@@ -1002,7 +996,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(15, 32);
+            this.label29.Location = new System.Drawing.Point(15, 65);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(63, 13);
             this.label29.TabIndex = 6;

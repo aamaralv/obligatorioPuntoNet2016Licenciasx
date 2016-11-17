@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using Fomularios;
+using System.IO;
 
 namespace Fomularios
 {
@@ -420,10 +421,12 @@ namespace Fomularios
                     MessageBox.Show("Seleccione una ruta antes de continuar.");
                 else
                 {
+
                     String clave = @"Ruta\|Repositorio";
                     ws.UpdateConfig(clave, lblRutaRepositorioNueva.Text);
                     CargarConexiones(); //CargarRutas();   Hay que mejorarlo porque esta chancho
                     MessageBox.Show("Actualización exitosa.");
+                    lblRutaRepositorioNueva.Text = "";
 
                 }
             }
@@ -441,10 +444,21 @@ namespace Fomularios
                     MessageBox.Show("Seleccione un archivo antes de continuar.");
                 else
                 {
-                    String clave = @"Ruta\|Licencia";
-                    ws.UpdateConfig(clave, lblRutaNuevaLicencia.Text);
-                    CargarConexiones(); //CargarRutas();   Hay que mejorarlo porque esta chancho
-                    MessageBox.Show("Actualización exitosa.");
+                    if (String.IsNullOrEmpty(lblRutaRepositorio.Text))
+                    {
+                        MessageBox.Show("Por favor, indicar la ruta del repositorio.");
+                    }
+                    else {
+                        String clave = @"Ruta\|Licencia";
+                        //CargarRutas();   Hay que mejorarlo porque esta chancho
+                        string direccionOrigen = lblRutaNuevaLicencia.Text;
+                        string direccionDestino = String.Format("{0}{1}{2}",lblRutaRepositorio.Text,@"\" , lblRutaNuevaLicencia.Text.Substring(lblRutaNuevaLicencia.Text.LastIndexOf(@"\")).Replace(@"\", ""));
+                        ws.UpdateConfig(clave, direccionDestino);
+                        File.Copy(direccionOrigen, direccionDestino,true);
+                        MessageBox.Show("La licencia por defecto fue actualizada.");
+                        lblRutaNuevaLicencia.Text = "";
+                        CargarConexiones();
+                    }
                 }
             }
             catch (Exception ex)
@@ -460,10 +474,25 @@ namespace Fomularios
                 if (String.IsNullOrEmpty(lblRutaNuevaOI.Text))
                     MessageBox.Show("Seleccione una archivo antes de continuar.");
                 else {
-                    String clave = @"Ruta\|OI";
-                    ws.UpdateConfig(clave, lblRutaNuevaOI.Text);
-                    CargarConexiones(); //CargarRutas();   Hay que mejorarlo porque esta chancho
-                    MessageBox.Show("Actualización exitosa.");
+                    if (String.IsNullOrEmpty(lblRutaRepositorio.Text))
+                    {
+                        MessageBox.Show("Por favor, indicar la ruta del repositorio.");
+                    }
+                    else
+                    {
+                        String clave = @"Ruta\|OI";
+                        
+
+                        string direccionOrigen = lblRutaNuevaOI.Text;
+                        string direccionDestino = String.Format("{0}{1}{2}", lblRutaRepositorio.Text, @"\", lblRutaNuevaOI.Text.Substring(lblRutaNuevaOI.Text.LastIndexOf(@"\")).Replace(@"\", ""));
+                        ws.UpdateConfig(clave, direccionDestino);
+                        File.Copy(direccionOrigen, direccionDestino, true);
+                        MessageBox.Show("La licencia por defecto fue actualizada.");
+                        lblRutaNuevaOI.Text = "";
+                        CargarConexiones();
+                        
+
+                    }
 
                 }
             }
