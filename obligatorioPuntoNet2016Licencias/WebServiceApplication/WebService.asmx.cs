@@ -129,6 +129,30 @@ namespace WebServiceApplication{
             }
         }
 
+        //Quitar Rol
+        [WebMethod]
+        public void RemoveRol(int idRol, int idUsu)
+        {
+            try
+            {
+                using (LicenciasEntities DBF = new LicenciasEntities())
+                {
+                    Usuario user = DBF.Usuario.Find(idUsu);
+                    Roles roles = DBF.Roles.Find(idRol);
+                    {
+                        roles.Usuario.Remove(user);
+                        user.Roles.Remove(roles);
+                        DBF.SaveChanges();
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Console.Write(ex.StackTrace);
+            }
+        }
+
 
         ///Listar rol
         [WebMethod]

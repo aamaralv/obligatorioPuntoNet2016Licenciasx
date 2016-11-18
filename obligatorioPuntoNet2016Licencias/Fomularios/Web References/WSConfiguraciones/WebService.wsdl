@@ -92,6 +92,17 @@
       <s:element name="AddRolResponse">
         <s:complexType />
       </s:element>
+      <s:element name="RemoveRol">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idRol" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idUsu" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveRolResponse">
+        <s:complexType />
+      </s:element>
       <s:element name="ListRol">
         <s:complexType>
           <s:sequence>
@@ -329,6 +340,12 @@
   <wsdl:message name="AddRolSoapOut">
     <wsdl:part name="parameters" element="tns:AddRolResponse" />
   </wsdl:message>
+  <wsdl:message name="RemoveRolSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveRol" />
+  </wsdl:message>
+  <wsdl:message name="RemoveRolSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveRolResponse" />
+  </wsdl:message>
   <wsdl:message name="ListRolSoapIn">
     <wsdl:part name="parameters" element="tns:ListRol" />
   </wsdl:message>
@@ -416,6 +433,10 @@
       <wsdl:input message="tns:AddRolSoapIn" />
       <wsdl:output message="tns:AddRolSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="RemoveRol">
+      <wsdl:input message="tns:RemoveRolSoapIn" />
+      <wsdl:output message="tns:RemoveRolSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="ListRol">
       <wsdl:input message="tns:ListRolSoapIn" />
       <wsdl:output message="tns:ListRolSoapOut" />
@@ -501,6 +522,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddRol">
       <soap:operation soapAction="http://tempuri.org/AddRol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRol">
+      <soap:operation soapAction="http://tempuri.org/RemoveRol" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -648,6 +678,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddRol">
       <soap12:operation soapAction="http://tempuri.org/AddRol" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveRol">
+      <soap12:operation soapAction="http://tempuri.org/RemoveRol" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

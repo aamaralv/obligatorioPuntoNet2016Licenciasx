@@ -17,14 +17,15 @@ namespace Fomularios
     public partial class Configuraciones : Form
     {
         private int maxidusuario = 0;
-        private string carpetacliente="";
+        private string carpetacliente = "";
         private WSConfiguraciones.WebService ws = new WSConfiguraciones.WebService();
 
         public Configuraciones()
         {
             String conexion = LeerConfiguracion();
             InitializeComponent();
-            if (String.IsNullOrEmpty(conexion)) {
+            if (String.IsNullOrEmpty(conexion))
+            {
                 tabControlAcciones.GetControl(0).Enabled = false;
                 tabControlAcciones.GetControl(1).Enabled = false;
                 tabControlAcciones.GetControl(2).Enabled = true;
@@ -39,13 +40,15 @@ namespace Fomularios
 
         private void Acciones_Load(object sender, EventArgs e)
         {
-            
-            switch (tabControlAcciones.SelectedIndex) {
+
+            switch (tabControlAcciones.SelectedIndex)
+            {
                 case 0:
                     CargarUsuarios();
                     break;
                 case 1:
                     CargarRoles();
+                    CargarUsuariosPorRol();
                     break;
                 case 2:
                     CargarConexiones();
@@ -63,11 +66,12 @@ namespace Fomularios
         private void btnSeleccionarNuevaRuta_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fdb = new FolderBrowserDialog();
-            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK) {
+            if (fdb.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
                 if (!String.IsNullOrEmpty(fdb.SelectedPath))
                     lblRutaRepositorioNueva.Text = fdb.SelectedPath;
             }
-            
+
         }
 
         private void btnSeleccionarLicencia_Click(object sender, EventArgs e)
@@ -90,7 +94,7 @@ namespace Fomularios
             }
         }
 
-        
+
 
         private void btnSeleccionarCarpetaCliente_Click(object sender, EventArgs e)
         {
@@ -118,7 +122,7 @@ namespace Fomularios
             return result;
         }
 
-         private void CargarRoles()
+        private void CargarRoles()
         {
             /*Carga de combos para seleccion de roles*/
             WSConfiguraciones.Roles[] roles = ws.ListRoles();
@@ -146,47 +150,49 @@ namespace Fomularios
             lblRutaRepositorio.Text = configuraciones[9].Valor;
             lblRutaOI.Text = configuraciones[8].Valor;
             lblRutaLicencia.Text = configuraciones[7].Valor;
-       
+
         }
 
         private void CargarRutas()
         {
             /*Carga de datos para la pestaña de rutas*/
-            
+
         }
 
         private void RegistrarUsuario()
         {
-          
-        
-            ws.AddUsuarios(maxidusuario+1,this.txtnombreusuario.Text,txtloginusuario.Text,txtcontraseñausuario.Text,txtcorreousuario.Text);
 
-           DialogResult res = MessageBox.Show("Usuario se registro con exito!", "Configuracion", MessageBoxButtons.OK);
+
+            ws.AddUsuarios(maxidusuario + 1, this.txtnombreusuario.Text, txtloginusuario.Text, txtcontraseñausuario.Text, txtcorreousuario.Text);
+
+            DialogResult res = MessageBox.Show("Usuario se registro con exito!", "Configuracion", MessageBoxButtons.OK);
 
 
         }
 
         private void CargarUsuarios()
         {
-            this.dataGridViewUsuarios.Enabled = true;      
- 
+            this.dataGridViewUsuarios.Enabled = true;
+
             WSConfiguraciones.Usuario[] usuarios = ws.ListUsuarios();
             this.dataGridViewUsuarios.Rows.Clear();
 
             foreach (WSConfiguraciones.Usuario usuario in usuarios)
             {
-                if (maxidusuario < usuario.IdUsuario){
+                if (maxidusuario < usuario.IdUsuario)
+                {
                     maxidusuario = usuario.IdUsuario;
                 }
                 //Console.WriteLine("numero " + usuario.IdUsuario);
-                WSConfiguraciones.Roles[] roles= ws.ListRol(usuario.IdUsuario);
+                WSConfiguraciones.Roles[] roles = ws.ListRol(usuario.IdUsuario);
 
-                foreach (WSConfiguraciones.Roles rol in roles) {
+                foreach (WSConfiguraciones.Roles rol in roles)
+                {
                     this.dataGridViewUsuarios.Rows.Insert(this.dataGridViewUsuarios.NewRowIndex, usuario.IdUsuario, usuario.Nombre, usuario.Usuario1, rol.Descripcion, usuario.Correo);
 
                 }
 
-                   
+
             }
 
         }
@@ -201,7 +207,7 @@ namespace Fomularios
 
             foreach (WSConfiguraciones.Clientes cliente in clientes)
             {
-               
+
                 this.dataGridViewregistrados.Rows.Insert(this.dataGridViewregistrados.NewRowIndex, cliente.Nombre, cliente.Carpeta);
 
 
@@ -226,52 +232,92 @@ namespace Fomularios
                 Console.WriteLine("numero " + usuario.IdUsuario);
                 WSConfiguraciones.Roles[] roles = ws.ListRol(usuario.IdUsuario);
 
-                
-                    foreach (WSConfiguraciones.Roles rol in roles) {
 
+                foreach (WSConfiguraciones.Roles rol in roles)
+                {
 
-                    if (this.cmbroles.SelectedValue.ToString().Equals(rol.IdRol))
+                    Console.WriteLine("this.cmbroles.SelectedValue.ToString() " + this.cmbroles.SelectedValue.ToString() + "rol " + rol.IdRol);
+                    if (this.cmbroles.SelectedValue.ToString().Equals(rol.IdRol.ToString()))
                     {
-                        
+                        Console.WriteLine("numeroa " + usuario.IdUsuario);
                         this.lbxusuariosasignados.Items.Add(usuario);
                         this.lbxusuariosasignados.DisplayMember = "Nombre";
                         this.lbxusuariosasignados.ValueMember = "IdUsuario";
                     }
-                    
-                    }
+
+                }
 
 
-                if (roles.Length == 0) {
+                if (roles.Length == 0)
+                {
+                    Console.WriteLine("numerob " + usuario.IdUsuario);
                     this.lbxusuariosinrol.Items.Add(usuario);
                     this.lbxusuariosinrol.DisplayMember = "Nombre";
                     this.lbxusuariosinrol.ValueMember = "IdUsuario";
                 }
-                   
+
             }
 
-             
+
         }
 
 
         private void AsignarRolUsuario()
         {
 
-     
+
             int idrol = int.Parse(this.cmbroles.SelectedValue.ToString());
 
-            WSConfiguraciones.Usuario usuario = (WSConfiguraciones.Usuario)this.lbxusuariosinrol.SelectedItem;
-            int idusuario = usuario.IdUsuario;
-            Console.WriteLine("id usuario " + usuario.IdUsuario + " idrol " + idrol);
+            if (this.lbxusuariosinrol.SelectedItem != null)
+            {
 
-            ws.AddRol(idrol, idusuario);
-          
+                WSConfiguraciones.Usuario usuario = (WSConfiguraciones.Usuario)this.lbxusuariosinrol.SelectedItem;
+                int idusuario = usuario.IdUsuario;
+                Console.WriteLine("id usuario " + usuario.IdUsuario + " idrol " + idrol);
 
-            this.lbxusuariosasignados.Items.Add(usuario);
-            this.lbxusuariosasignados.DisplayMember = "Nombre";
-            this.lbxusuariosasignados.ValueMember = "IdUsuario";
+                ws.AddRol(idrol, idusuario);
+
+                this.lbxusuariosinrol.Items.Remove(usuario);
+                this.lbxusuariosasignados.Items.Add(usuario);
+                this.lbxusuariosasignados.DisplayMember = "Nombre";
+                this.lbxusuariosasignados.ValueMember = "IdUsuario";
 
 
-            DialogResult res = MessageBox.Show("Se asigno rol al usuario exito!", "Configuracion", MessageBoxButtons.OK);
+                DialogResult res = MessageBox.Show("Se asigno rol al usuario exito!", "Configuracion", MessageBoxButtons.OK);
+            }
+            else {
+                DialogResult res = MessageBox.Show("Seleccione un usuario!", "Configuracion", MessageBoxButtons.OK);
+            }
+
+
+        }
+
+        private void RemoverRolUsuario()
+        {
+
+
+            int idrol = int.Parse(this.cmbroles.SelectedValue.ToString());
+
+            if (this.lbxusuariosasignados.SelectedItem!= null)
+            {
+                WSConfiguraciones.Usuario usuario = (WSConfiguraciones.Usuario)this.lbxusuariosasignados.SelectedItem;
+                int idusuario = usuario.IdUsuario;
+                Console.WriteLine("id usuario " + usuario.IdUsuario + " idrol " + idrol);
+
+                ws.RemoveRol(idrol, idusuario);
+
+                this.lbxusuariosasignados.Items.Remove(usuario);
+                this.lbxusuariosinrol.Items.Add(usuario);
+                this.lbxusuariosinrol.DisplayMember = "Nombre";
+                this.lbxusuariosinrol.ValueMember = "IdUsuario";
+
+
+
+                DialogResult res = MessageBox.Show("Seleccione un usuario!", "Configuracion", MessageBoxButtons.OK);
+            }
+            else {
+                DialogResult res = MessageBox.Show("Seleccione un usuario!", "Configuracion", MessageBoxButtons.OK);
+            }
 
 
         }
@@ -279,7 +325,7 @@ namespace Fomularios
         private void RegistrarCliente()
         {
 
-         
+
             if (this.txtnombrecliente.Text.Equals(String.Empty) || this.carpetacliente.Equals(String.Empty))
             {
                 DialogResult res = MessageBox.Show("Los campos no pueden estar vacios,verifique por por favor!", "Configuracion", MessageBoxButtons.OK);
@@ -302,11 +348,12 @@ namespace Fomularios
                 txbUbicacion.Text = ".";
                 txbUbicacion.Enabled = false;
             }
-            else {
+            else
+            {
                 txbUbicacion.Text = "";
                 txbUbicacion.Enabled = true;
             }
-            
+
         }
 
         private void btnProbarBD_Click(object sender, EventArgs e)
@@ -333,40 +380,44 @@ namespace Fomularios
                 switch (ex.Number)
                 {
                     case 4060:
-                        mensaje = "Base de datos inválida.";                 
-                  break;
-                    case 18456: 
+                        mensaje = "Base de datos inválida.";
+                        break;
+                    case 18456:
                         mensaje = "Fallo al loguearse.";
-                  break;
+                        break;
                     default:
                         mensaje = "Error al intentar abrir la BD.";
-                  break;
+                        break;
                 }
             }
-        
-            finally {
+
+            finally
+            {
                 txbMensajeBD.Text = mensaje;
                 myConnection.Close();
             }
 
         }
-        private String armarString() {
+        private String armarString()
+        {
             StringBuilder str = new StringBuilder();
             str.Append("Data Source =");
             str.Append(txbUbicacion.Text);
             str.Append("; Initial Catalog =");
             str.Append(txbBase.Text);
-            if (String.IsNullOrEmpty(txbUsuario.Text) && String.IsNullOrEmpty(txbContraseña.Text)) {
+            if (String.IsNullOrEmpty(txbUsuario.Text) && String.IsNullOrEmpty(txbContraseña.Text))
+            {
                 str.Append("; Integrated Security = True");
             }
-            else {
+            else
+            {
                 str.Append("User Id=");
                 str.Append(txbUsuario.Text);
                 str.Append("; Password = ");
                 str.Append(txbContraseña.Text);
             }
             str.Append(";Connection Timeout = 5");
-            return str.ToString(); 
+            return str.ToString();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -388,7 +439,7 @@ namespace Fomularios
 
         private void cmbroles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             CargarUsuariosPorRol();
 
 
@@ -399,7 +450,7 @@ namespace Fomularios
             AsignarRolUsuario();
         }
 
- 
+
         private void btnconfirmar_Click(object sender, EventArgs e)
         {
             try
@@ -407,10 +458,11 @@ namespace Fomularios
                 RegistrarCliente();
                 CargarClientes();
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void btnConfirmarNuevaRuta_Click(object sender, EventArgs e)
@@ -448,13 +500,14 @@ namespace Fomularios
                     {
                         MessageBox.Show("Por favor, indicar la ruta del repositorio.");
                     }
-                    else {
+                    else
+                    {
                         String clave = @"Ruta\|Licencia";
                         //CargarRutas();   Hay que mejorarlo porque esta chancho
                         string direccionOrigen = lblRutaNuevaLicencia.Text;
-                        string direccionDestino = String.Format("{0}{1}{2}",lblRutaRepositorio.Text,@"\" , lblRutaNuevaLicencia.Text.Substring(lblRutaNuevaLicencia.Text.LastIndexOf(@"\")).Replace(@"\", ""));
+                        string direccionDestino = String.Format("{0}{1}{2}", lblRutaRepositorio.Text, @"\", lblRutaNuevaLicencia.Text.Substring(lblRutaNuevaLicencia.Text.LastIndexOf(@"\")).Replace(@"\", ""));
                         ws.UpdateConfig(clave, direccionDestino);
-                        File.Copy(direccionOrigen, direccionDestino,true);
+                        File.Copy(direccionOrigen, direccionDestino, true);
                         MessageBox.Show("La licencia por defecto fue actualizada.");
                         lblRutaNuevaLicencia.Text = "";
                         CargarConexiones();
@@ -473,7 +526,8 @@ namespace Fomularios
             {
                 if (String.IsNullOrEmpty(lblRutaNuevaOI.Text))
                     MessageBox.Show("Seleccione una archivo antes de continuar.");
-                else {
+                else
+                {
                     if (String.IsNullOrEmpty(lblRutaRepositorio.Text))
                     {
                         MessageBox.Show("Por favor, indicar la ruta del repositorio.");
@@ -481,7 +535,7 @@ namespace Fomularios
                     else
                     {
                         String clave = @"Ruta\|OI";
-                        
+
 
                         string direccionOrigen = lblRutaNuevaOI.Text;
                         string direccionDestino = String.Format("{0}{1}{2}", lblRutaRepositorio.Text, @"\", lblRutaNuevaOI.Text.Substring(lblRutaNuevaOI.Text.LastIndexOf(@"\")).Replace(@"\", ""));
@@ -490,7 +544,7 @@ namespace Fomularios
                         MessageBox.Show("La licencia por defecto fue actualizada.");
                         lblRutaNuevaOI.Text = "";
                         CargarConexiones();
-                        
+
 
                     }
 
@@ -505,6 +559,11 @@ namespace Fomularios
         private void btnGuardarMail_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnquitarrol_Click(object sender, EventArgs e)
+        {
+            RemoverRolUsuario();
         }
     }
 }

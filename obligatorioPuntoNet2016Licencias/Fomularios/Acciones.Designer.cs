@@ -417,6 +417,7 @@
             this.btnquitarrol.TabIndex = 20;
             this.btnquitarrol.Text = "<<";
             this.btnquitarrol.UseVisualStyleBackColor = true;
+            this.btnquitarrol.Click += new System.EventHandler(this.btnquitarrol_Click);
             // 
             // btnasignarrol
             // 
@@ -480,7 +481,6 @@
             this.btnGuardarMail.TabIndex = 16;
             this.btnGuardarMail.Text = "Guardar";
             this.btnGuardarMail.UseVisualStyleBackColor = true;
-            this.btnGuardarMail.Click += new System.EventHandler(this.btnGuardarMail_Click);
             // 
             // txbMensajeMail
             // 
